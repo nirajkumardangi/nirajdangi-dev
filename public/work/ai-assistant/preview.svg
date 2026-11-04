@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#090D16"/>
+
+  <!-- Top App Chrome -->
+  <rect width="1280" height="60" fill="#0F172A" stroke-bottom="#1E293B"/>
+  <line x1="0" y1="60" x2="1280" y2="60" stroke="#1E293B" stroke-width="1"/>
+  <circle cx="30" cy="30" r="10" fill="#5B5BD6"/>
+  <text x="50" y="36" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">AI Knowledge Assistant</text>
+  <rect x="230" y="20" width="130" height="22" rx="11" fill="rgba(91,91,214,0.2)"/>
+  <text x="242" y="35" font-family="monospace" font-size="10" font-weight="600" fill="#A5B4FC">LOCAL RAG · OLLAMA</text>
+  
+  <text x="1060" y="35" font-family="monospace" font-size="11" fill="#10B981">● 0 CLOUD LEAKAGE</text>
+  <text x="1200" y="35" font-family="monospace" font-size="11" fill="#64748B">v2.4</text>
+
+  <!-- Left Sidebar (Documents Ingested) -->
+  <rect x="0" y="60" width="300" height="740" fill="#0C1222" stroke-right="#1E293B"/>
+  <line x1="300" y1="60" x2="300" y2="800" stroke="#1E293B" stroke-width="1"/>
+  
+  <text x="24" y="100" font-family="monospace" font-size="11" letter-spacing="1" fill="#64748B">INDEXED KNOWLEDGE BASE</text>
+  
+  <!-- Doc 1 -->
+  <rect x="16" y="120" width="268" height="64" rx="8" fill="#1E293B" stroke="#334155"/>
+  <text x="32" y="146" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#F8FAFC">Clinic_SOP_2026.pdf</text>
+  <text x="32" y="168" font-family="monospace" font-size="10" fill="#94A3B8">184 chunks · ChromaDB Vector</text>
+
+  <!-- Doc 2 -->
+  <rect x="16" y="196" width="268" height="64" rx="8" fill="#131D31" stroke="#1E293B"/>
+  <text x="32" y="222" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1">Pricing_Schedule_Q2.docx</text>
+  <text x="32" y="244" font-family="monospace" font-size="10" fill="#64748B">56 chunks · Embedded local</text>
+
+  <!-- Doc 3 -->
+  <rect x="16" y="272" width="268" height="64" rx="8" fill="#131D31" stroke="#1E293B"/>
+  <text x="32" y="298" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#CBD5E1">Doctor_Consultation_FAQ.txt</text>
+  <text x="32" y="320" font-family="monospace" font-size="10" fill="#64748B">42 chunks · Semantic search</text>
+
+  <!-- Chat Area (Center / Right) -->
+  <!-- User Query -->
+  <rect x="680" y="100" width="540" height="64" rx="12" fill="#1E293B"/>
+  <text x="704" y="137" font-family="system-ui, sans-serif" font-size="14" fill="#F8FAFC">What is the consultation fee and cancellation policy for cardiology?</text>
+
+  <!-- Bot Response with Citation -->
+  <rect x="340" y="190" width="720" height="260" rx="12" fill="#111C35" stroke="#1E3A8A"/>
+  <circle cx="370" cy="225" r="14" fill="#5B5BD6"/>
+  <text x="363" y="230" font-family="system-ui" font-size="14" fill="#FFFFFF">AI</text>
+  <text x="396" y="228" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#A5B4FC">AI Assistant (Ollama Llama-3 8B)</text>
+  <text x="910" y="228" font-family="monospace" font-size="11" fill="#10B981">Latency: 280ms · Zero Cloud</text>
+
+  <text x="360" y="270" font-family="system-ui, sans-serif" font-size="15" fill="#E2E8F0" line-height="24">
+    According to the indexed Clinic_SOP_2026 document:
+  </text>
+  <text x="360" y="300" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">
+    1. First-time OPD cardiology consultation is ₹500 (includes basic ECG review).
+  </text>
+  <text x="360" y="325" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">
+    2. Follow-up visits within 7 days carry no additional fee.
+  </text>
+  <text x="360" y="350" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">
+    3. Appointments can be rescheduled up to 2 hours prior with zero penalty.
+  </text>
+
+  <!-- Cited Sources Block -->
+  <rect x="360" y="380" width="670" height="48" rx="8" fill="#0C1527" stroke="#1E293B"/>
+  <text x="376" y="410" font-family="monospace" font-size="11" fill="#38BDF8">CITATION [1]: Clinic_SOP_2026.pdf (Page 4, Paragraph 2) · Cosine similarity: 0.912</text>
+
+  <!-- Chat Input Bar -->
+  <rect x="340" y="700" width="880" height="54" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="364" y="734" font-family="system-ui, sans-serif" font-size="14" fill="#64748B">Ask any question across your clinic or company files...</text>
+  <rect x="1140" y="708" width="70" height="38" rx="6" fill="#5B5BD6"/>
+  <text x="1155" y="732" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Send →</text>
+</svg>
+

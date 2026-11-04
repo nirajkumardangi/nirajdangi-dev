@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#0A0A0C"/>
+
+  <!-- Header -->
+  <text x="60" y="55" font-family="system-ui, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.5" fill="#FFFFFF">KUMAR STUDIOS</text>
+  <text x="240" y="54" font-family="monospace" font-size="11" letter-spacing="2" fill="#71717A">PORTRAIT &amp; COMMERCIAL CINEMATOGRAPHY</text>
+  
+  <text x="960" y="54" font-family="monospace" font-size="12" fill="#A1A1AA">ARCHIVE</text>
+  <text x="1050" y="54" font-family="monospace" font-size="12" fill="#A1A1AA">RATES</text>
+  <rect x="1120" y="32" width="100" height="34" rx="6" fill="#FFFFFF"/>
+  <text x="1145" y="54" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#000000">BOOK</text>
+
+  <!-- Editorial Spread -->
+  <rect x="60" y="100" width="760" height="580" rx="8" fill="#18181B"/>
+  <!-- Dramatic photo simulation -->
+  <circle cx="440" cy="380" r="220" fill="#27272A"/>
+  <path d="M200,600 Q440,320 680,680 Z" fill="#3F3F46" opacity="0.7"/>
+  <circle cx="440" cy="320" r="80" fill="#E4E4E7" opacity="0.9"/>
+  <rect x="90" y="130" width="130" height="26" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <text x="105" y="147" font-family="monospace" font-size="10" font-weight="700" fill="#E4E4E7" letter-spacing="1">EDITORIAL · 2026</text>
+  <text x="90" y="610" font-family="Georgia, serif" font-style="italic" font-size="34" fill="#FFFFFF">The Ranchi Heritage Series</text>
+  <text x="90" y="640" font-family="system-ui, sans-serif" font-size="14" fill="#A1A1AA">Hasselblad X2D 100C · Natural light portraits across tribal artisans of Bundu.</text>
+
+  <!-- Right Side: Service Packages -->
+  <rect x="850" y="100" width="370" height="270" rx="8" fill="#18181B" stroke="#27272A"/>
+  <text x="880" y="140" font-family="monospace" font-size="11" letter-spacing="2" fill="#6366F1">PACKAGE 01</text>
+  <text x="880" y="175" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Brand &amp; Campaign</text>
+  <text x="880" y="205" font-family="system-ui, sans-serif" font-size="13" fill="#A1A1AA">Full-day on-location commercial shoot, 40 color-graded masters, full licensing.</text>
+  <text x="880" y="250" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">₹45,000 <tspan font-size="13" font-weight="400" fill="#71717A">/ day</tspan></text>
+  <rect x="880" y="285" width="310" height="44" rx="6" fill="#6366F1"/>
+  <text x="965" y="312" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Inquire on WhatsApp →</text>
+
+  <rect x="850" y="390" width="370" height="290" rx="8" fill="#18181B" stroke="#27272A"/>
+  <text x="880" y="430" font-family="monospace" font-size="11" letter-spacing="2" fill="#10B981">PACKAGE 02</text>
+  <text x="880" y="465" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Executive Portraiture</text>
+  <text x="880" y="495" font-family="system-ui, sans-serif" font-size="13" fill="#A1A1AA">For doctors, founders &amp; creators. Studio lighting at Kanke Road or on-site.</text>
+  <text x="880" y="540" font-family="system-ui, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF">₹12,500 <tspan font-size="13" font-weight="400" fill="#71717A">/ session</tspan></text>
+  <rect x="880" y="575" width="310" height="44" rx="6" fill="#27272A" stroke="#3F3F46"/>
+  <text x="975" y="602" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">View Lookbook →</text>
+</svg>
+

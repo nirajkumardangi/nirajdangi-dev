@@ -1,0 +1,151 @@
+{
+  "totalChecked": 108,
+  "overflowFailures": [],
+  "exceedingElements": [],
+  "smallTouchTargets": [
+    {
+      "route": "project-rovala",
+      "width": 320,
+      "count": 1,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "Back to all projects",
+          "ariaLabel": "",
+          "width": 192,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "route": "project-rovala",
+      "width": 360,
+      "count": 1,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "Back to all projects",
+          "ariaLabel": "",
+          "width": 192,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "route": "project-rovala",
+      "width": 390,
+      "count": 1,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "Back to all projects",
+          "ariaLabel": "",
+          "width": 192,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "route": "project-rovala",
+      "width": 414,
+      "count": 1,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "Back to all projects",
+          "ariaLabel": "",
+          "width": 192,
+          "height": 20
+        }
+      ]
+    },
+    {
+      "route": "contact",
+      "width": 320,
+      "count": 2,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "[PLACEHOLDER]@gmail.com",
+          "ariaLabel": "",
+          "width": 194,
+          "height": 18
+        },
+        {
+          "tag": "a",
+          "text": "+91[PLACEHOLDER]",
+          "ariaLabel": "",
+          "width": 134,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "route": "contact",
+      "width": 360,
+      "count": 2,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "[PLACEHOLDER]@gmail.com",
+          "ariaLabel": "",
+          "width": 194,
+          "height": 18
+        },
+        {
+          "tag": "a",
+          "text": "+91[PLACEHOLDER]",
+          "ariaLabel": "",
+          "width": 134,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "route": "contact",
+      "width": 390,
+      "count": 2,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "[PLACEHOLDER]@gmail.com",
+          "ariaLabel": "",
+          "width": 194,
+          "height": 18
+        },
+        {
+          "tag": "a",
+          "text": "+91[PLACEHOLDER]",
+          "ariaLabel": "",
+          "width": 134,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "route": "contact",
+      "width": 414,
+      "count": 2,
+      "targets": [
+        {
+          "tag": "a",
+          "text": "[PLACEHOLDER]@gmail.com",
+          "ariaLabel": "",
+          "width": 194,
+          "height": 18
+        },
+        {
+          "tag": "a",
+          "text": "+91[PLACEHOLDER]",
+          "ariaLabel": "",
+          "width": 134,
+          "height": 18
+        }
+      ]
+    }
+  ],
+  "imageIssues": [],
+  "h1Issues": [],
+  "axeIssues": [],
+  "screenshotsSaved": 48
+}

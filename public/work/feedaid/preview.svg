@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#064E3B"/>
+
+  <rect width="1280" height="70" fill="#022C22"/>
+  <text x="60" y="44" font-family="system-ui, sans-serif" font-size="22" font-weight="800" fill="#34D399">FeedAid</text>
+  <rect x="170" y="27" width="150" height="26" rx="13" fill="rgba(52,211,153,0.15)"/>
+  <text x="184" y="44" font-family="monospace" font-size="11" font-weight="600" fill="#6EE7B7">ZERO FOOD WASTE</text>
+  
+  <text x="960" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#A7F3D0">NGO Dispatch Network</text>
+  <rect x="1110" y="20" width="110" height="36" rx="8" fill="#10B981"/>
+  <text x="1132" y="43" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Post Surplus</text>
+
+  <!-- Hero Header -->
+  <text x="60" y="140" font-family="monospace" font-size="12" letter-spacing="2" fill="#6EE7B7">COMMUNITY RELIEF PLATFORM · RANCHI</text>
+  <text x="60" y="195" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Connecting surplus banquet meals</text>
+  <text x="60" y="245" font-family="Georgia, serif" font-style="italic" font-size="44" font-weight="400" fill="#A7F3D0">with local shelters in 60 minutes.</text>
+  <text x="60" y="290" font-family="system-ui, sans-serif" font-size="16" fill="#D1FAE5">Real-time volunteer alerts for wedding halls, corporate events, and restaurants across Ranchi.</text>
+
+  <!-- 3 Live Activity Cards -->
+  <rect x="60" y="340" width="360" height="390" rx="12" fill="#022C22" stroke="#065F46"/>
+  <rect x="80" y="360" width="110" height="24" rx="4" fill="#065F46"/>
+  <text x="90" y="376" font-family="monospace" font-size="10" font-weight="700" fill="#34D399">DISPATCHED</text>
+  <text x="80" y="420" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Morabadi Banquet</text>
+  <text x="80" y="450" font-family="system-ui, sans-serif" font-size="13" fill="#A7F3D0">120 packed vegetarian dinners picked up. Delivered to RIMS Patient Shelter.</text>
+  <text x="80" y="520" font-family="monospace" font-size="24" font-weight="700" fill="#34D399">120 Meals</text>
+  <text x="80" y="545" font-family="system-ui, sans-serif" font-size="12" fill="#6EE7B7">Verified hygienic temperature check</text>
+
+  <rect x="460" y="340" width="360" height="390" rx="12" fill="#022C22" stroke="#065F46"/>
+  <rect x="480" y="360" width="130" height="24" rx="4" fill="#991B1B"/>
+  <text x="490" y="376" font-family="monospace" font-size="10" font-weight="700" fill="#FCA5A5">SURPLUS ALERT</text>
+  <text x="480" y="420" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Doranda Community Hall</text>
+  <text x="480" y="450" font-family="system-ui, sans-serif" font-size="13" fill="#A7F3D0">250 meals ready for immediate transit. Looking for volunteer driver with van.</text>
+  <rect x="480" y="630" width="320" height="48" rx="8" fill="#10B981"/>
+  <text x="560" y="660" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Accept Transit Run →</text>
+
+  <rect x="860" y="340" width="360" height="390" rx="12" fill="#065F46"/>
+  <text x="890" y="390" font-family="monospace" font-size="11" letter-spacing="1" fill="#A7F3D0">IMPACT METRIC</text>
+  <text x="890" y="445" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF">[ADD_REAL_METRIC]</text>
+  <text x="890" y="480" font-family="system-ui, sans-serif" font-size="14" fill="#D1FAE5">Meals rescued from landfill across Ranchi municipal limits.</text>
+  <text x="890" y="540" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Partner NGO Network</text>
+  <text x="890" y="565" font-family="system-ui, sans-serif" font-size="13" fill="#A7F3D0">Verified local food distribution partners</text>
+</svg>
+

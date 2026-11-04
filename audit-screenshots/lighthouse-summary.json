@@ -1,0 +1,34 @@
+[
+  {
+    "route": "home",
+    "url": "http://localhost:3000/",
+    "performance": 57,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  {
+    "route": "work",
+    "url": "http://localhost:3000/work",
+    "performance": 61,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  {
+    "route": "contact",
+    "url": "http://localhost:3000/contact",
+    "performance": 76,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  {
+    "route": "pricing",
+    "url": "http://localhost:3000/#pricing",
+    "performance": 57,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  }
+]

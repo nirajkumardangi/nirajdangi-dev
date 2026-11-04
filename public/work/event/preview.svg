@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <rect width="1280" height="800" fill="#0B0F19"/>
+
+  <!-- Nav -->
+  <text x="60" y="55" font-family="system-ui, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF">SPOTLIGHT EVENTS</text>
+  <rect x="250" y="38" width="100" height="24" rx="12" fill="rgba(59,130,246,0.15)"/>
+  <text x="264" y="54" font-family="monospace" font-size="10" font-weight="700" fill="#60A5FA">CONFERENCES</text>
+
+  <text x="960" y="54" font-family="monospace" font-size="12" fill="#94A3B8">PAST EXPOS</text>
+  <text x="1070" y="54" font-family="monospace" font-size="12" fill="#94A3B8">SPONSORS</text>
+  <rect x="1150" y="32" width="70" height="34" rx="6" fill="#2563EB"/>
+  <text x="1165" y="53" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">DECK</text>
+
+  <!-- Hero Header -->
+  <text x="60" y="140" font-family="monospace" font-size="11" letter-spacing="2" fill="#38BDF8">CORPORATE, TECH &amp; CULTURAL PRODUCTIONS</text>
+  <text x="60" y="195" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#FFFFFF" letter-spacing="-1">Flawless event execution</text>
+  <text x="60" y="245" font-family="Georgia, serif" font-style="italic" font-size="44" font-weight="400" fill="#60A5FA">for 500 to 10,000 attendees.</text>
+  <text x="60" y="290" font-family="system-ui, sans-serif" font-size="16" fill="#94A3B8">State summits, medical conventions, college fests &amp; industry expos across Jharkhand &amp; Bihar.</text>
+
+  <!-- 3 Interactive Cards -->
+  <rect x="60" y="340" width="360" height="390" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="90" y="385" font-family="monospace" font-size="11" letter-spacing="1" fill="#38BDF8">EXPO 01</text>
+  <text x="90" y="420" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">Jharkhand Mining &amp; Infra Expo</text>
+  <text x="90" y="455" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Khelgaon Stadium · 140 Exhibitors · 8,200 Trade Visitors</text>
+  <rect x="90" y="495" width="300" height="40" rx="6" fill="#1F2937"/>
+  <text x="105" y="520" font-family="system-ui, sans-serif" font-size="13" fill="#E2E8F0">Turnkey Stage, AV &amp; Registration</text>
+  <rect x="90" y="555" width="300" height="40" rx="6" fill="#1F2937"/>
+  <text x="105" y="580" font-family="system-ui, sans-serif" font-size="13" fill="#E2E8F0">Custom 3D Stall Fabrication</text>
+
+  <rect x="460" y="340" width="360" height="390" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="490" y="385" font-family="monospace" font-size="11" letter-spacing="1" fill="#34D399">CONVENTION 02</text>
+  <text x="490" y="420" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">East Zone Pediatric Conclave</text>
+  <text x="490" y="455" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Auditorium complex · 750 Doctors · Live Surgery Relay</text>
+  <rect x="490" y="495" width="300" height="40" rx="6" fill="#1F2937"/>
+  <text x="505" y="520" font-family="system-ui, sans-serif" font-size="13" fill="#E2E8F0">Hybrid Zoom &amp; YouTube Live Stream</text>
+  <rect x="490" y="555" width="300" height="40" rx="6" fill="#1F2937"/>
+  <text x="505" y="580" font-family="system-ui, sans-serif" font-size="13" fill="#E2E8F0">Automated Delegate Badge Badging</text>
+
+  <!-- RFP / Sponsor Deck -->
+  <rect x="860" y="340" width="360" height="390" rx="10" fill="#1E293B" stroke="#334155"/>
+  <text x="890" y="390" font-family="monospace" font-size="11" letter-spacing="2" fill="#60A5FA">PLAN YOUR NEXT EVENT</text>
+  <text x="890" y="440" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Request an RFP or Event Deck</text>
+  <text x="890" y="480" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Send guest estimate and preferred dates for an itemized production estimate in 24 hours.</text>
+  <rect x="890" y="560" width="300" height="48" rx="8" fill="#2563EB"/>
+  <text x="955" y="590" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Submit Event RFP →</text>
+</svg>
+

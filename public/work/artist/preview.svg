@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="artBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAF9F6"/>
+      <stop offset="100%" stop-color="#F3EFEA"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#artBg)"/>
+
+  <!-- Minimal Nav -->
+  <text x="60" y="55" font-family="Georgia, serif" font-size="24" font-weight="400" letter-spacing="1" fill="#1C1917">Ananya Sen</text>
+  <text x="60" y="75" font-family="monospace" font-size="10" letter-spacing="2" fill="#78716C">CONTEMPORARY PAINTER &amp; PRINTMAKER</text>
+
+  <text x="940" y="60" font-family="system-ui, sans-serif" font-size="13" letter-spacing="1" fill="#44403C">SELECTED WORKS</text>
+  <text x="1080" y="60" font-family="system-ui, sans-serif" font-size="13" letter-spacing="1" fill="#44403C">EXHIBITIONS</text>
+  <text x="1190" y="60" font-family="system-ui, sans-serif" font-size="13" letter-spacing="1" fill="#A855F7">ACQUIRE</text>
+
+  <!-- Editorial Headline -->
+  <text x="60" y="160" font-family="monospace" font-size="11" letter-spacing="3" fill="#A855F7">COLLECTION 2025–2026</text>
+  <text x="60" y="210" font-family="Georgia, serif" font-size="46" font-style="italic" fill="#1C1917">"Echoes of Chota Nagpur"</text>
+  <text x="60" y="250" font-family="system-ui, sans-serif" font-size="16" fill="#57534E">A cycle of 14 oil &amp; mixed-media canvases exploring soil, monsoon minerals, and memory.</text>
+
+  <!-- Gallery Grid -->
+  <!-- Piece 1 -->
+  <rect x="60" y="290" width="360" height="420" rx="4" fill="#E7E5E4"/>
+  <!-- Abstract art representation inside rect -->
+  <rect x="70" y="300" width="340" height="320" fill="#292524"/>
+  <circle cx="240" cy="460" r="110" fill="#CA8A04" opacity="0.8"/>
+  <circle cx="210" cy="430" r="70" fill="#D97706" opacity="0.9"/>
+  <path d="M70,550 Q200,420 410,500 L410,620 L70,620 Z" fill="#78350F"/>
+  <text x="70" y="655" font-family="Georgia, serif" font-size="17" font-weight="600" fill="#1C1917">Late Terracotta No. 4</text>
+  <text x="70" y="680" font-family="monospace" font-size="11" fill="#78716C">48 × 60 in · Oil on raw linen · ₹1,80,000</text>
+  <text x="350" y="668" font-family="monospace" font-size="10" font-weight="700" fill="#16A34A">AVAILABLE</text>
+
+  <!-- Piece 2 -->
+  <rect x="460" y="290" width="360" height="420" rx="4" fill="#E7E5E4"/>
+  <rect x="470" y="300" width="340" height="320" fill="#1C1917"/>
+  <circle cx="640" cy="430" r="90" fill="#0284C7" opacity="0.7"/>
+  <rect x="520" y="360" width="240" height="180" fill="#0D9488" opacity="0.6"/>
+  <path d="M470,570 Q600,480 810,530 L810,620 L470,620 Z" fill="#1E293B"/>
+  <text x="470" y="655" font-family="Georgia, serif" font-size="17" font-weight="600" fill="#1C1917">Monsoon Over Subarnarekha</text>
+  <text x="470" y="680" font-family="monospace" font-size="11" fill="#78716C">60 × 72 in · Mixed media &amp; pigment · Private Collection</text>
+  <text x="750" y="668" font-family="monospace" font-size="10" font-weight="700" fill="#DC2626">ACQUIRED</text>
+
+  <!-- Piece 3: Studio & Commission Note -->
+  <rect x="860" y="290" width="360" height="420" rx="4" fill="#1C1917"/>
+  <text x="900" y="350" font-family="monospace" font-size="11" letter-spacing="2" fill="#CA8A04">STUDIO INQUIRIES</text>
+  <text x="900" y="400" font-family="Georgia, serif" font-size="28" fill="#F5F5F4" font-style="italic">Commission a bespoke canvas for your home.</text>
+  <text x="900" y="470" font-family="system-ui, sans-serif" font-size="14" fill="#A8A29E" line-height="22">
+    Accepting 3 commissioned corporate or residential works for Fall 2026. Custom framing and white-glove shipping worldwide.
+  </text>
+  <rect x="900" y="550" width="280" height="48" rx="4" fill="#F5F5F4"/>
+  <text x="945" y="580" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1C1917">WhatsApp Artist Studio →</text>
+  
+  <text x="900" y="660" font-family="monospace" font-size="11" fill="#78716C">Morabadi, Ranchi Studio · By Appointment</text>
+</svg>
+

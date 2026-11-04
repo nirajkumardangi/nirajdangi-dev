@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="docGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EDF2F7"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="800" fill="url(#docGrad)"/>
+
+  <!-- Top Nav Bar -->
+  <rect width="1280" height="70" fill="#FFFFFF" border-bottom="1px solid #E2E8F0"/>
+  <line x1="0" y1="70" x2="1280" y2="70" stroke="#E2E8F0" stroke-width="1"/>
+  
+  <text x="60" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#0F172A">Dr. A. K. Verma, MD</text>
+  <rect x="270" y="27" width="110" height="26" rx="13" fill="#DCFCE7"/>
+  <circle cx="282" cy="40" r="4" fill="#16A34A"/>
+  <text x="294" y="44" font-family="monospace" font-size="11" font-weight="600" fill="#15803D">OPD OPEN</text>
+
+  <text x="820" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#64748B">Lalpur, Ranchi</text>
+  <text x="960" y="44" font-family="system-ui, sans-serif" font-size="14" fill="#64748B">Mon–Sat: 10AM–6PM</text>
+  <rect x="1100" y="20" width="120" height="36" rx="8" fill="#25D366"/>
+  <text x="1120" y="43" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">WhatsApp OPD</text>
+
+  <!-- Main Hero Section -->
+  <text x="60" y="140" font-family="monospace" font-size="12" font-weight="700" fill="#0284C7" letter-spacing="2">SENIOR CONSULTANT CARDIOLOGIST &amp; PHYSICIAN</text>
+  <text x="60" y="195" font-family="system-ui, sans-serif" font-size="44" font-weight="800" fill="#0F172A" letter-spacing="-1">Fast appointments, verified care</text>
+  <text x="60" y="250" font-family="Georgia, serif" font-style="italic" font-size="44" font-weight="400" fill="#2563EB">without the clinic queue.</text>
+  <text x="60" y="300" font-family="system-ui, sans-serif" font-size="18" fill="#475569">Ex-AIIMS Resident · 18+ Years clinical practice in Ranchi. Direct WhatsApp slot booking.</text>
+
+  <!-- Quick Action Cards Grid -->
+  <!-- Card 1: Direct OPD Booking -->
+  <g filter="url(#cardShadow)">
+    <rect x="60" y="350" width="360" height="380" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <rect x="90" y="380" width="48" height="48" rx="10" fill="#E0F2FE"/>
+    <text x="105" y="412" font-family="system-ui" font-size="22" fill="#0284C7">📅</text>
+    <text x="90" y="460" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#0F172A">Direct OPD Slot</text>
+    <text x="90" y="490" font-family="system-ui, sans-serif" font-size="14" fill="#64748B">Pick an available 15-min slot today.</text>
+    <text x="90" y="515" font-family="system-ui, sans-serif" font-size="14" fill="#64748B">Instant WhatsApp confirmation token.</text>
+    
+    <rect x="90" y="550" width="300" height="44" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <text x="105" y="578" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#0F172A">Today: 4:30 PM &amp; 5:15 PM Available</text>
+    
+    <rect x="90" y="630" width="300" height="48" rx="10" fill="#0284C7"/>
+    <text x="145" y="660" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#FFFFFF">Book Appointment (₹500)</text>
+  </g>
+
+  <!-- Card 2: Treatment Focus -->
+  <g filter="url(#cardShadow)">
+    <rect x="460" y="350" width="360" height="380" rx="16" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="490" y="400" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#0F172A">Specialisations</text>
+    <line x1="490" y1="420" x2="790" y2="420" stroke="#F1F5F9" stroke-width="2"/>
+    
+    <text x="490" y="460" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#0F172A">• Hypertension &amp; Preventive Cardiology</text>
+    <text x="490" y="485" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">Comprehensive ECG, Echo, and 24hr Holter test</text>
+    
+    <text x="490" y="530" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#0F172A">• Diabetic Heart Care</text>
+    <text x="490" y="555" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">Metabolic profiling &amp; lipid panel management</text>
+
+    <text x="490" y="600" font-family="system-ui, sans-serif" font-size="15" font-weight="600" fill="#0F172A">• Chest Pain &amp; Angina Evaluation</text>
+    <text x="490" y="625" font-family="system-ui, sans-serif" font-size="13" fill="#64748B">Immediate triage and cardiac screening</text>
+  </g>
+
+  <!-- Card 3: Clinic Location & Live Token -->
+  <g filter="url(#cardShadow)">
+    <rect x="860" y="350" width="360" height="380" rx="16" fill="#0F172A"/>
+    <text x="890" y="400" font-family="monospace" font-size="12" fill="#38BDF8" letter-spacing="1">LIVE CLINIC STATUS</text>
+    <text x="890" y="445" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Token #18</text>
+    <text x="890" y="475" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Currently in consultation. Approx wait: 12 mins.</text>
+    
+    <line x1="890" y1="505" x2="1190" y2="505" stroke="#334155" stroke-width="1"/>
+    
+    <text x="890" y="540" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Clinic Address</text>
+    <text x="890" y="565" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Circular Road, Near Nucleus Mall, Lalpur, Ranchi</text>
+    
+    <rect x="890" y="620" width="300" height="46" rx="8" fill="#1E293B" stroke="#334155"/>
+    <text x="960" y="649" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#38BDF8">Get Directions on Maps →</text>
+  </g>
+</svg>
+

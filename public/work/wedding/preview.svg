@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800">
+  <defs>
+    <linearGradient id="wedBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCF9F6"/>
+      <stop offset="100%" stop-color="#F7EFE9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="800" fill="url(#wedBg)"/>
+
+  <!-- Nav -->
+  <text x="60" y="55" font-family="Georgia, serif" font-size="24" font-weight="400" fill="#292524" letter-spacing="3">UTSAV</text>
+  <text x="165" y="53" font-family="monospace" font-size="9" letter-spacing="3" fill="#B45309">LUXURY WEDDINGS &amp; CELEBRATIONS</text>
+  
+  <text x="960" y="53" font-family="system-ui, sans-serif" font-size="12" letter-spacing="1" fill="#78716C">REAL WEDDINGS</text>
+  <text x="1080" y="53" font-family="system-ui, sans-serif" font-size="12" letter-spacing="1" fill="#78716C">VENUES</text>
+  <rect x="1160" y="32" width="60" height="32" rx="4" fill="#B45309"/>
+  <text x="1173" y="52" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">DATE</text>
+
+  <!-- Hero Header -->
+  <text x="60" y="145" font-family="monospace" font-size="11" letter-spacing="3" fill="#B45309">BESPOKE WEDDINGS IN RANCHI &amp; BEYOND</text>
+  <text x="60" y="200" font-family="Georgia, serif" font-size="46" font-style="italic" fill="#1C1917">Unforgettable celebrations,</text>
+  <text x="60" y="250" font-family="Georgia, serif" font-size="46" font-weight="400" fill="#1C1917">orchestrated with flawless precision.</text>
+  <text x="60" y="295" font-family="system-ui, sans-serif" font-size="16" fill="#57534E">From heritage estates in Chota Nagpur to destination palace galas. Full-service planning, decor &amp; hospitality.</text>
+
+  <!-- 3 Showcase Cards -->
+  <!-- Card 1 -->
+  <rect x="60" y="340" width="360" height="400" rx="8" fill="#FFFFFF" stroke="#E7E5E4"/>
+  <rect x="70" y="350" width="340" height="230" fill="#78350F" opacity="0.85"/>
+  <circle cx="240" cy="460" r="60" fill="#FDE68A" opacity="0.6"/>
+  <text x="80" y="380" font-family="monospace" font-size="10" fill="#FEF3C7" letter-spacing="1">RANCHI HERITAGE</text>
+  <text x="80" y="615" font-family="Georgia, serif" font-size="20" font-weight="600" fill="#1C1917">Aarav &amp; Meera</text>
+  <text x="80" y="640" font-family="system-ui, sans-serif" font-size="13" fill="#78716C">Radisson Blu Ranchi · 600 Guests · 3 Days</text>
+  <text x="80" y="690" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#B45309">View 48 Photos in Gallery →</text>
+
+  <!-- Card 2 -->
+  <rect x="460" y="340" width="360" height="400" rx="8" fill="#FFFFFF" stroke="#E7E5E4"/>
+  <rect x="470" y="350" width="340" height="230" fill="#831843" opacity="0.85"/>
+  <circle cx="640" cy="460" r="70" fill="#FBCFE8" opacity="0.5"/>
+  <text x="480" y="380" font-family="monospace" font-size="10" fill="#FCE7F3" letter-spacing="1">ROYAL LAWNS</text>
+  <text x="480" y="615" font-family="Georgia, serif" font-size="20" font-weight="600" fill="#1C1917">Kabir &amp; Tanya</text>
+  <text x="480" y="640" font-family="system-ui, sans-serif" font-size="13" fill="#78716C">Kanke Resort Estate · Sufi Sangeet &amp; Vows</text>
+  <text x="480" y="690" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#B45309">View 62 Photos in Gallery →</text>
+
+  <!-- Card 3: Date Availability Box -->
+  <rect x="860" y="340" width="360" height="400" rx="8" fill="#1C1917"/>
+  <text x="900" y="390" font-family="monospace" font-size="11" letter-spacing="2" fill="#D97706">2026 CALENDAR</text>
+  <text x="900" y="440" font-family="Georgia, serif" font-size="26" font-style="italic" fill="#F5F5F4">Check Your Wedding Date</text>
+  <text x="900" y="480" font-family="system-ui, sans-serif" font-size="13" fill="#A8A29E">We commit to only 2 weddings per month to maintain uncompromising craft &amp; attention.</text>
+  
+  <rect x="900" y="530" width="280" height="40" rx="4" fill="#292524" stroke="#44403C"/>
+  <text x="920" y="555" font-family="system-ui, sans-serif" font-size="13" fill="#D6D3D1">Nov &amp; Dec 2026: 3 Slots Left</text>
+
+  <rect x="900" y="600" width="280" height="48" rx="6" fill="#25D366"/>
+  <text x="930" y="630" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">WhatsApp Date Enquiry →</text>
+</svg>
+
