@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import redirectsData from "./src/data/redirects.json";
 
 const securityHeaders = [
   {
@@ -28,7 +29,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Enforce consistent URL formatting without trailing slashes */
+  trailingSlash: false,
   cacheComponents: true,
   partialPrefetching: true,
   images: {
@@ -48,6 +50,28 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+    ];
+  },
+  async redirects() {
+    return [
+      // 1. Permanent 301 www to apex domain canonical redirect
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.niraj.online",
+          },
+        ],
+        destination: "https://niraj.online/:path*",
+        permanent: true,
+      },
+      // 2. Structural & Legacy path redirects mapped from redirects.json
+      ...redirectsData.map((item) => ({
+        source: item.source,
+        destination: item.destination,
+        permanent: item.permanent,
+      })),
     ];
   },
 };

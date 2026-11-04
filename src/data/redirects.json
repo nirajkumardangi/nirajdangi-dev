@@ -1,0 +1,52 @@
+[
+  {
+    "source": "/services",
+    "destination": "/#services",
+    "permanent": true
+  },
+  {
+    "source": "/pricing",
+    "destination": "/#pricing",
+    "permanent": true
+  },
+  {
+    "source": "/about",
+    "destination": "/#about",
+    "permanent": true
+  },
+  {
+    "source": "/projects",
+    "destination": "/work",
+    "permanent": true
+  },
+  {
+    "source": "/case-studies",
+    "destination": "/work",
+    "permanent": true
+  },
+  {
+    "source": "/portfolio",
+    "destination": "/work",
+    "permanent": true
+  },
+  {
+    "source": "/solutions/education-elearning-websites",
+    "destination": "/solutions",
+    "permanent": false
+  },
+  {
+    "source": "/solutions/real-estate-websites",
+    "destination": "/solutions",
+    "permanent": false
+  },
+  {
+    "source": "/solutions/travel-tourism-websites",
+    "destination": "/solutions",
+    "permanent": false
+  },
+  {
+    "source": "/solutions/saas-development",
+    "destination": "/solutions",
+    "permanent": false
+  }
+]

@@ -141,3 +141,65 @@ export interface SiteConfig {
   };
   ogImage: string;
 }
+
+export type SolutionWave = 1 | 1.5 | 2;
+
+export interface SolutionFeatureGroup {
+  group: string; // e.g. "Customer / Patient Facing", "Admin & Operations"
+  items: string[];
+}
+
+export interface Solution {
+  id: number;
+  slug: string;
+  title: string;
+  shortTitle: string;
+  wave: SolutionWave;
+  isPublished: boolean;
+  tagline: string;
+  answerBox: string; // 40-60 words concise answer box for AI Overview & SERP
+  primaryKeyword: string;
+  secondaryKeywords: string[];
+  targetAudience: {
+    headline: string;
+    examples: string[];
+  };
+  features: SolutionFeatureGroup[];
+  stack: string[];
+  integrations: string[];
+  priceRange: {
+    inr: string;
+    usd: string;
+  };
+  timeline: string;
+  proof: {
+    slug?: string;
+    name: string;
+    status: ProjectStatus | "Build Queue";
+    description: string;
+    featuresDemonstrated: string[];
+  };
+  complianceNotes: string;
+  faqs: FaqItem[];
+  lastModified: string;
+}
+
+export interface BlogPostSection {
+  heading: string;
+  paragraphs: string[];
+  bulletPoints?: string[];
+}
+
+export interface BlogPost {
+  slug: string;
+  title: string;
+  tagline: string;
+  publishedAt: string;
+  updatedAt: string;
+  readingTime: string;
+  category: "Healthcare" | "E-commerce" | "AI & Automation" | "Portfolio" | "Nonprofit" | "Cost & Guides";
+  primaryKeyword: string;
+  excerpt: string;
+  sections: BlogPostSection[];
+  isPublished: boolean;
+}

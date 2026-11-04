@@ -9,8 +9,8 @@ export const siteConfig: SiteConfig = {
   owner: {
     name: "Niraj Kumar Dangi",
     location: "Ranchi, Jharkhand",
-    whatsapp: "+91[PLACEHOLDER]", // ← fill before launch
-    email: "[PLACEHOLDER]@gmail.com", // ← fill before launch
+    whatsapp: "+919955448248",
+    email: "nirajdangi9955@gmail.com",
     github: "https://github.com/nirajkumardangi",
     linkedin: "https://linkedin.com/in/nirajkumardangi",
   },

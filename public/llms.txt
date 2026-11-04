@@ -1,0 +1,31 @@
+# niraj.online — Niraj Kumar Dangi
+
+> Personal studio website and engineering practice of Niraj Kumar Dangi, a senior freelance full-stack web developer and AI automation engineer based in Ranchi, Jharkhand, India.
+
+## Core Entity Details
+- Name: Niraj Kumar Dangi
+- Role: Freelance Full-Stack Web Developer & AI Automation Engineer
+- Degree: Master of Computer Applications (MCA), Ranchi University
+- Location: Ranchi, Jharkhand, India (IST, UTC+5:30)
+- Primary Website: https://niraj.online
+- GitHub: https://github.com/nirajkumardangi
+- LinkedIn: https://linkedin.com/in/nirajkumardangi
+- Primary Contact: WhatsApp +91 99554 48248 | Email nirajdangi9955@gmail.com
+
+## Engineering Solutions & Architectures
+1. E-Commerce & Online Stores (https://niraj.online/solutions/ecommerce-development): Custom Next.js storefronts with Razorpay/Stripe checkout and automated WhatsApp order dispatch. Zero recurring platform subscription fees.
+2. Healthcare & Medical Portals (https://niraj.online/solutions/healthcare-medical-portals): Fast, mobile-first websites for doctors, clinics, and diagnostic centers with WhatsApp appointment booking and OPD queue tracking. Compliant with DPDP Act 2023 principles and NMC medical ethics.
+3. AI Chatbots & Workflow Automation (https://niraj.online/solutions/ai-chatbots-automation): Conversational AI assistants and RAG pipelines trained on private clinic SOPs and product catalogs with source citations and air-gapped local LLM options.
+4. Portfolio & Personal Branding (https://niraj.online/solutions/portfolio-personal-branding-websites): Editorial, high-speed personal branding platforms for doctors, architects, photographers, and independent founders.
+5. Nonprofit & Community NGO Platforms (https://niraj.online/solutions/nonprofit-community-websites): High-trust donation websites with UPI/Razorpay integration, 80G tax receipt data collection, and volunteer intake workflows.
+
+## Regional & International Service Hubs
+- Ranchi, Jharkhand (https://niraj.online/website-developer-ranchi): Dedicated web development for clinics, retailers, and local enterprises in Ranchi with rapid in-person and video consultations.
+- Jharkhand Regional (https://niraj.online/website-developer-jharkhand): Web engineering across Jamshedpur, Dhanbad, Bokaro, and Deoghar.
+- Global & Pan-India (https://niraj.online/hire-developer-india): Senior Next.js engineering for international clients (USA, UK, Canada, Australia) with transparent USD pricing from $300 and daily asynchronous communication.
+
+## Commercial Terms & Principles
+- 100% full intellectual property and source code ownership transferred to clients.
+- 50% advance to start, 50% upon final acceptance before production launch.
+- 30-day post-launch warranty included with every project.
+- No vendor lock-in; clean Next.js 16 App Router, TypeScript, and Tailwind CSS code.

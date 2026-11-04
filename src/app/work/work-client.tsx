@@ -40,28 +40,8 @@ export function WorkClient() {
   });
 
   return (
-    <div className="py-24 md:py-32 lg:py-36 bg-bg">
+    <div className="pb-24 md:pb-32 bg-bg">
       <Container>
-        {/* Header */}
-        <div className="flex flex-col gap-4 max-w-2xl mb-12">
-          <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-muted">
-            INDEX · 09 PROJECTS &amp; PROTOTYPES
-          </p>
-
-          <h1 className="text-h1 font-bold text-ink tracking-tight text-balance">
-            All projects, prototypes &amp;{" "}
-            <span className="font-serif italic font-normal text-accent">
-              tools.
-            </span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-muted text-pretty">
-            Filter by business vertical or explore open-source tools. Every site
-            is designed for enquiries, mobile-first performance, and full code
-            ownership.
-          </p>
-        </div>
-
         {/* URL-Synced Filter Chips */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-12 scroll-smooth [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {VERTICAL_FILTERS.map((f) => {
