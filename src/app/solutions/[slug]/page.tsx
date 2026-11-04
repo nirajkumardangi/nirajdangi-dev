@@ -54,25 +54,32 @@ export async function generateMetadata({
     };
   }
 
-  const metaTitle = `${solution.title} | niraj.online`;
+  const shortTitles: Record<string, string> = {
+    "portfolio-personal-branding-websites": "Portfolio & Personal Branding",
+    "healthcare-medical-portals": "Healthcare Clinic Web Portals",
+    "ecommerce-development": "E-Commerce Store Development",
+    "ai-chatbots-automation": "AI Chatbots & Lead Automation",
+    "nonprofit-community-websites": "Nonprofit & NGO Websites",
+  };
+  const pageTitle = shortTitles[solution.slug] || solution.shortTitle;
   const metaDescription = `${solution.answerBox.slice(0, 150)}...`;
 
   return {
-    title: metaTitle,
+    title: pageTitle,
     description: metaDescription,
     keywords: [solution.primaryKeyword, ...solution.secondaryKeywords],
     alternates: {
       canonical: `${siteConfig.url}/solutions/${solution.slug}`,
     },
     openGraph: {
-      title: metaTitle,
+      title: `${pageTitle} | ${siteConfig.owner.name}`,
       description: metaDescription,
       url: `${siteConfig.url}/solutions/${solution.slug}`,
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: metaTitle,
+      title: `${pageTitle} | ${siteConfig.owner.name}`,
       description: metaDescription,
     },
   };

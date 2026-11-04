@@ -86,3 +86,4 @@ Google favors active profiles with real, geotagged photos:
 2. If **Video Verification** is triggered:
    - Prepare: Show your government ID (Aadhaar or PAN matching Niraj Kumar Dangi), laptop showing your business domain control panel or GitHub repository, and exterior street signs or building numbers of your Ranchi residence.
 3. Once verified, configure the Google Messaging feature or route messages directly to your WhatsApp business line.
+

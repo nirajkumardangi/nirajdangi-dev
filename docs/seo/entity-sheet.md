@@ -75,3 +75,4 @@ This document defines the entity model for **Niraj Kumar Dangi** and **niraj.onl
 
 - **Disambiguation**: Niraj Kumar Dangi is an independent software engineer and web developer based in Ranchi, Jharkhand, India. He is NOT affiliated with generic IT staffing agencies, offshore call centers, or unrelated businesses with similar family names.
 - **Brand Consistency**: All outward publications (GitHub, LinkedIn, Portfolio, Directory profiles) must maintain identical spelling (`Niraj Kumar Dangi`) and refer back to `https://niraj.online`.
+

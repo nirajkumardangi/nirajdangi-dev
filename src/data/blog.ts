@@ -263,3 +263,4 @@ export function getPublishedBlogPosts(): BlogPost[] {
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
+

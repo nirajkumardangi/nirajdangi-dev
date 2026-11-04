@@ -49,3 +49,4 @@ This roadmap establishes a consistent, high-utility publishing schedule for **ni
 3. **Structured Schema**: Automated `BlogPosting` JSON-LD with author, datePublished, dateModified, and publisher.
 4. **GEO Answer Box**: 40–60 word executive takeaways block at the start of every article.
 5. **No Broken Links**: Cross-link naturally to relevant `/solutions/[slug]` and case studies.
+

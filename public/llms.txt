@@ -29,3 +29,4 @@
 - 50% advance to start, 50% upon final acceptance before production launch.
 - 30-day post-launch warranty included with every project.
 - No vendor lock-in; clean Next.js 16 App Router, TypeScript, and Tailwind CSS code.
+

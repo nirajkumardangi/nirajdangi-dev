@@ -84,3 +84,4 @@ Every informational, solution, or local page MUST feature a dedicated **Answer-F
 - **Mobile Viewport**: Minimum font size for body copy is 14px; interactive inputs and button touch targets must be at least $44 \times 44\text{ px}$.
 - **Zero CLS (Cumulative Layout Shift)**: Images must use explicit width/height or Next.js `<Image>` component with responsive `sizes` attribute.
 - **Color Contrast**: All text must achieve WCAG 2.1 AA ratio ($4.5:1$ for normal text, $3:1$ for large text) across both Light (`#FAFAF9` background) and Dark (`#12121A` background) themes.
+

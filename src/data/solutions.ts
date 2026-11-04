@@ -751,3 +751,4 @@ export function getPublishedSolutions(): Solution[] {
 export function getSolutionBySlug(slug: string): Solution | undefined {
   return solutions.find((s) => s.slug === slug);
 }
+

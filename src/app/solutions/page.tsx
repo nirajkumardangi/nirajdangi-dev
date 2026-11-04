@@ -20,7 +20,7 @@ import { siteConfig } from "@/data/site";
 import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Web & AI Solutions Architecture | niraj.online",
+  title: "Web & AI Solutions Architecture",
   description:
     "Explore 9 specialized web engineering and AI solutions by Niraj Kumar Dangi. Production Next.js, healthcare portals, e-commerce, and custom chatbots.",
   alternates: {

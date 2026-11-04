@@ -9,7 +9,8 @@
     "lint": "eslint",
     "validate:sitemap": "npx tsx scripts/validate-sitemap.mjs",
     "indexnow": "node scripts/indexnow.mjs",
-    "verify:seo": "node scripts/verify-seo.mjs"
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "audit:routes": "node scripts/seo-route-audit.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^7.0.2",

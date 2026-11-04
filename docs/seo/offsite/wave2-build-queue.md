@@ -65,3 +65,4 @@ In strict adherence to our **Engineering Honesty Rule**, no solution page in Wav
   - [ ] Case study added to `src/data/projects.ts` with status `"Concept"`.
   - [ ] Set `isPublished: true` in `src/data/solutions.ts`.
   - [ ] Remove redirect from `src/data/redirects.json`.
+

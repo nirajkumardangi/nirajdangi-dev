@@ -68,3 +68,4 @@ const customUrls = process.argv.slice(2);
 const urlsToSubmit = customUrls.length > 0 ? customUrls : DEFAULT_URLS;
 
 submitIndexNow(urlsToSubmit);
+

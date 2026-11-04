@@ -45,11 +45,12 @@ export async function generateMetadata({
     };
   }
 
-  const metaTitle = `${post.title.slice(0, 50)}... | niraj.online`;
   const metaDescription = post.excerpt.slice(0, 155);
 
   return {
-    title: metaTitle,
+    title: {
+      absolute: `${post.title.slice(0, 48)}... | ${siteConfig.owner.name}`,
+    },
     description: metaDescription,
     keywords: [post.primaryKeyword],
     alternates: {

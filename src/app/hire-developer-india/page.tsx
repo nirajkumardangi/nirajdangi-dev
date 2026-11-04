@@ -19,7 +19,7 @@ import { siteConfig } from "@/data/site";
 import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Hire Freelance Next.js Developer in India | Niraj Kumar Dangi",
+  title: "Hire Next.js Developer India",
   description:
     "Hire senior Next.js and TypeScript developer in India. Clean architecture, US/EU timezone overlap, transparent USD pricing from $300. Full code ownership.",
   keywords: [

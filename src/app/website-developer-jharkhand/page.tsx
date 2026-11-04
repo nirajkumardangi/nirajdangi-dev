@@ -18,7 +18,7 @@ import { siteConfig } from "@/data/site";
 import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Website Developer in Jharkhand | Niraj Kumar Dangi",
+  title: "Website Developer in Jharkhand",
   description:
     "Freelance web developer serving Jharkhand businesses across Jamshedpur, Dhanbad, Bokaro, and Ranchi. High-performance Next.js websites and custom portals.",
   keywords: [

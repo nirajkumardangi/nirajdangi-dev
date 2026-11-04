@@ -31,3 +31,4 @@ This guide outlines ethical, sustainable authority-building tactics for **niraj.
 ### D. Client Site Attribution (Subtle & Natural)
 - Tasteful footer credits on client websites engineered by Niraj (e.g., Rovala.in).
 - Always use brand name or natural anchor text (`Built by Niraj Kumar Dangi — Web Developer`); never use keyword-stuffed anchors like `Best Web Developer Ranchi`.
+

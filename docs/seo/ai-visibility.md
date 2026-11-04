@@ -58,3 +58,4 @@ In `src/components/seo/json-ld.tsx`, we bind:
    - Check Google Search Console > Performance > Search Results. Look for impressions and clicks on informational queries with low traditional CTR (signifying AI Overview extraction).
 3. **Bing Webmaster Tools**:
    - Check Copilot chat integration queries and ensure Bingbot has indexed the latest sitemap and `robots.txt`.
+

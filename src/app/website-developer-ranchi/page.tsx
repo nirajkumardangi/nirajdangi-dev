@@ -20,7 +20,7 @@ import { siteConfig } from "@/data/site";
 import { whatsappLink } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Website Developer in Ranchi | Niraj Kumar Dangi",
+  title: "Website Developer in Ranchi",
   description:
     "Freelance website developer in Ranchi building fast Next.js websites for doctors, retail, and local businesses. 100% code ownership, starting ₹4,999.",
   keywords: [

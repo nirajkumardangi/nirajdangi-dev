@@ -35,3 +35,4 @@ for (const w2 of wave2Slugs) {
 }
 
 console.log("✓ Sitemap validation completed successfully.");
+

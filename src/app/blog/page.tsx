@@ -13,7 +13,7 @@ import { getPublishedBlogPosts } from "@/data/blog";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Web Engineering & SEO Blog | niraj.online",
+  title: "Web Engineering & SEO Blog",
   description:
     "Practical guides on website costs in India, Next.js architecture, doctor clinic web compliance, and WhatsApp lead automation by Niraj Kumar Dangi.",
   alternates: {

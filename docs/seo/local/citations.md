@@ -50,3 +50,4 @@ Complete registration on these platforms using the master NAP specifications:
    - Verification status (Pending / Verified)
    - Annual review date
 3. Never use automated submission bots that submit duplicate, mangled, or inconsistent addresses. Manual submissions ensure 100% accuracy.
+
