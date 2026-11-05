@@ -39,7 +39,8 @@ export const projects: Project[] = [
       {
         category: "User Experience & Booking",
         badge: "Dispatch Engine",
-        description: "Zero-barrier interface designed for rapid mobile booking.",
+        description:
+          "Zero-barrier interface designed for rapid mobile booking.",
         items: [
           "Instant one-tap WhatsApp booking prefilled with Ranchi locality and detected water issue",
           "Locality selector with instant service availability checks for 42 Ranchi zones",
@@ -50,7 +51,8 @@ export const projects: Project[] = [
       {
         category: "Core Service Offerings",
         badge: "Technician Network",
-        description: "Standardized service protocols executed by verified technicians.",
+        description:
+          "Standardized service protocols executed by verified technicians.",
         items: [
           "RO Water Purifier Repair: Diagnostics for pump failure, water leakage, low flow, and electrical faults",
           "RO Installation & Uninstallation: Wall-mounting, plumbing hookups, and TDS balancing",
@@ -70,13 +72,36 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "WhatsApp Business API"],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "NodeJS",
+      "Nginx",
+      "Cloudflare",
+      "Vercel",
+      "Supabase",
+      "Render",
+    ],
     techStack: {
-      frontend: ["Next.js 14 (App Router)", "React 18", "TypeScript", "Tailwind CSS", "Lucide React"],
-      backend: ["Next.js Server Components", "Edge Route Handlers"],
-      integrations: ["WhatsApp Business Click-to-Chat API", "Google Maps Locality Geocoding"],
-      deployment: ["Vercel Edge Network", "Custom Domain SSL"],
-      tools: ["ESLint", "PostCSS", "Sharp WebP Pipeline"],
+      frontend: [
+        "Next.js 14 (App Router)",
+        "React 18",
+        "TypeScript",
+        "Tailwind CSS",
+        "Lucide React",
+      ],
+      backend: ["Node.js Fastify", "Edge Route Handlers", "Zod", "PostgreSQL"],
+      integrations: ["WhatsApp Business Click-to-Chat API", "SMS OTP"],
+      deployment: [
+        "Vercel Edge Network",
+        "Custom Domain SSL",
+        "Cloudflare Pages",
+        "Supabase",
+        "Render",
+      ],
+      tools: ["ESLint", "PostCSS", "Sharp WebP Pipeline", "Vite"],
     },
     implementation: {
       architecture:
@@ -178,7 +203,8 @@ export const projects: Project[] = [
       {
         category: "Visual Showcase & Curation",
         badge: "Editorial Gallery",
-        description: "Museum-grade visual presentation respecting artistic craft.",
+        description:
+          "Museum-grade visual presentation respecting artistic craft.",
         items: [
           "Dynamic masonry portfolio displaying full-resolution editorial photography",
           "Category-based filtering across Fashion, Portrait, Architectural, and Event photography",
@@ -189,7 +215,8 @@ export const projects: Project[] = [
       {
         category: "Session Booking & Consultation",
         badge: "Client Pipeline",
-        description: "Direct conversion workflow for private bookings and editorial commissions.",
+        description:
+          "Direct conversion workflow for private bookings and editorial commissions.",
         items: [
           "Direct 'Book a Session' inquiry workflow with date, location, and project type fields",
           "Studio philosophy and equipment disclosure ('Shot with the best camera gear')",
@@ -200,7 +227,8 @@ export const projects: Project[] = [
       {
         category: "Performance & Responsive Craft",
         badge: "60fps Experience",
-        description: "Engineered for sub-second rendering across mobile and retina displays.",
+        description:
+          "Engineered for sub-second rendering across mobile and retina displays.",
         items: [
           "Sub-second initial paint on Netlify CDN edge infrastructure",
           "Butter-smooth 60fps animations powered by Framer Motion",
@@ -209,9 +237,16 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["React", "Next.js", "Tailwind CSS", "Motion", "Netlify"],
+    stack: ["React", "Lenis", "Framer Motion", "GSAP", "Tailwind CSS"],
     techStack: {
-      frontend: ["React 18", "Next.js", "Framer Motion", "Tailwind CSS", "Lucide Icons"],
+      frontend: [
+        "React",
+        "Lenis",
+        "Framer Motion",
+        "GSAP",
+        "Tailwind CSS",
+        "Lucide Icons",
+      ],
       deployment: ["Netlify Global CDN", "Automated Git CI/CD"],
       tools: ["Sharp Image Optimization", "PostCSS", "Vite / Turbopack"],
     },
@@ -314,7 +349,8 @@ export const projects: Project[] = [
       {
         category: "Donation & Intake Workflow",
         badge: "Intake Engine",
-        description: "Streamlined 45-second reporting for busy chefs and banquet managers.",
+        description:
+          "Streamlined 45-second reporting for busy chefs and banquet managers.",
         items: [
           "'Share Your Meal' instant intake form with donor location and food type categorization",
           "Meal quantity estimator (feeds 20, 50, 100+ individuals) to match appropriate shelter capacity",
@@ -345,12 +381,11 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["Next.js", "React", "Node.js", "MongoDB", "Tailwind CSS"],
+    stack: ["React", "Foirebase", "Firestore", "Tailwind CSS"],
     techStack: {
-      frontend: ["React 18", "Next.js", "Tailwind CSS", "Lucide React"],
-      backend: ["Node.js", "Express", "Serverless Functions"],
-      database: ["MongoDB (Shelters & Rescue Records)"],
-      deployment: ["Netlify Global CDN", "Automated CI/CD Pipeline"],
+      frontend: ["React 18", "Tailwind CSS", "Lucide React"],
+      backend: ["Foirebase", "Firestore"],
+      deployment: ["Netlify Global CDN", "Git & GitHub"],
       tools: ["PostCSS", "Sharp WebP Pipeline", "Git"],
     },
     implementation: {
@@ -452,7 +487,8 @@ export const projects: Project[] = [
       {
         category: "Interactive 3D & Showcase",
         badge: "3D Experience",
-        description: "Engaging personal branding with real-time browser canvas rendering.",
+        description:
+          "Engaging personal branding with real-time browser canvas rendering.",
         items: [
           "Interactive developer workspace hero featuring custom 3D avatar and workstation",
           "Fluid dark-mode styling with precision neon accent lighting",
@@ -474,7 +510,8 @@ export const projects: Project[] = [
       {
         category: "Core Engineering Domains",
         badge: "Full-Stack + AI",
-        description: "Multi-disciplinary engineering capability spanning web and machine learning.",
+        description:
+          "Multi-disciplinary engineering capability spanning web and machine learning.",
         items: [
           "Full-Stack Web: Next.js 14, React, Tailwind CSS, TypeScript architectures",
           "Applied AI: Local RAG (ChromaDB + Ollama), Prompt Engineering, Gemini API",
@@ -485,9 +522,20 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
     techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Canvas / 3D"],
+      frontend: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Canvas / 3D",
+      ],
       deployment: ["Vercel Edge Network", "Custom Domain SSL (niraj.online)"],
-      tools: ["GitHub Actions CI/CD", "ESLint", "PostCSS", "Sharp WebP Pipeline"],
+      tools: [
+        "GitHub Actions CI/CD",
+        "ESLint",
+        "PostCSS",
+        "Sharp WebP Pipeline",
+      ],
     },
     implementation: {
       architecture:
@@ -628,10 +676,21 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Lucide React"],
+      frontend: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Lucide React",
+      ],
       backend: ["Python 3.11", "FastAPI", "Uvicorn", "LangChain"],
       database: ["ChromaDB (Local Vector Store)", "SQLite (Session History)"],
-      tools: ["Ollama (Local LLM Runtime)", "Sentence Transformers", "PyPDF", "python-docx"],
+      tools: [
+        "Ollama (Local LLM Runtime)",
+        "Sentence Transformers",
+        "PyPDF",
+        "python-docx",
+      ],
     },
     implementation: {
       architecture:
@@ -743,7 +802,8 @@ export const projects: Project[] = [
       {
         category: "Clinical Services & Specialties",
         badge: "Care Pathways",
-        description: "Clear presentation of medical expertise and clinic guidance.",
+        description:
+          "Clear presentation of medical expertise and clinic guidance.",
         items: [
           "Specialty directory covering Cardiology, Pediatrics, Orthopedics, and General Medicine",
           "Transparent consultation fee schedules with zero surprise clinic charges",
@@ -762,10 +822,13 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    stack: ["JavaScript", "Tailwind CSS"],
     techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
-      integrations: ["WhatsApp Appointment Confirmation", "Google Maps Directions API"],
+      frontend: ["JavaScript", "Tailwind CSS"],
+      integrations: [
+        "WhatsApp Appointment Confirmation",
+        "Google Maps Directions API",
+      ],
       tools: ["Sharp Image Pipeline", "PostCSS", "ESLint"],
     },
     implementation: {
@@ -864,7 +927,8 @@ export const projects: Project[] = [
       {
         category: "Showcase & Architecture",
         badge: "Showcase",
-        description: "Editorial photography and comprehensive building specifications.",
+        description:
+          "Editorial photography and comprehensive building specifications.",
         items: [
           "Architectural gallery presentation featuring high-dynamic-range property photography",
           "Detailed property spec sheets (square footage, bedrooms, bathrooms, parking, year built)",
@@ -875,7 +939,8 @@ export const projects: Project[] = [
       {
         category: "Search & Filtering",
         badge: "Instant Filter",
-        description: "Client-side parameter filtering with zero reload latency.",
+        description:
+          "Client-side parameter filtering with zero reload latency.",
         items: [
           "Zero-latency client-side filtering by property price, type, and locality",
           "List and grid view toggling with persistent user preference",
@@ -886,7 +951,8 @@ export const projects: Project[] = [
       {
         category: "Lead Capture & Compliance",
         badge: "Lead Engine",
-        description: "Direct connection between verified buyers and project brokers.",
+        description:
+          "Direct connection between verified buyers and project brokers.",
         items: [
           "Direct 'Schedule a Private Tour' inquiry form with preferred date selector",
           "One-tap agent WhatsApp consultation with pre-filled property reference ID",
@@ -895,9 +961,9 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
+    stack: ["JavaScript", "Tailwind CSS", "React"],
     techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
+      frontend: ["React", "JavaScript", "Tailwind CSS"],
       tools: ["PostCSS", "Sharp WebP Pipeline", "ESLint"],
     },
     implementation: {
@@ -957,211 +1023,6 @@ export const projects: Project[] = [
       "Zero layout shift during property card filtering",
     ],
     featured: true,
-  },
-  {
-    slug: "product-showcase",
-    title: "Beats 3 — E-Commerce Premium Audio Showcase",
-    name: "Beats 3",
-    vertical: "E-commerce",
-    status: "Concept",
-    tagline:
-      "High-conversion dark-mode product landing page with technical specs overview and instant bag checkout.",
-    description:
-      "Beats 3 is an immersive direct-to-consumer (D2C) audio landing page engineered to maximize product desirability and checkout conversions. Designed with sleek dark-mode aesthetics, floating high-resolution headphone visuals, interactive acoustic driver specs, and a frictionless 'Add to Bag' checkout flow. Built for sub-second load times on mobile 4G networks.",
-    overview: {
-      purpose:
-        "To create a high-converting single-product e-commerce experience that conveys acoustic engineering craft and drives immediate purchase decisions.",
-      problem:
-        "Direct-to-consumer lifestyle brands frequently lose potential sales when product landing pages are sluggish, cluttered with confusing options, or fail to communicate premium audio craft.",
-      targetAudience:
-        "Audiophiles, tech enthusiasts, remote professionals, and lifestyle shoppers looking for high-performance wireless headphones.",
-      highlights: [
-        "Immersive dark-mode product hero with floating high-resolution audio hardware photography",
-        "One-tap 'Add to Bag' with prominent pricing and instant checkout transition",
-        "Technical acoustic specs overview (drivers, 40h battery, active noise cancellation)",
-        "Music ecosystem integration links (Apple Music, Amazon, Spotify, YouTube)",
-      ],
-    },
-    problem:
-      "Direct-to-consumer lifestyle brands lose potential sales when product landing pages are slow, cluttered, or fail to communicate premium audio craft.",
-    solution:
-      "An immersive dark-mode product landing page featuring floating headphone visuals, key audio specs, brand trust logos, and a one-tap 'Add to Bag' workflow.",
-    features: [
-      "Immersive dark-mode product hero with floating device photography",
-      "One-tap 'Add to Bag' with pricing and instant checkout transition",
-      "Technical specs breakdown (audio drivers, wireless battery life, noise cancellation)",
-      "Ecosystem integration links (Apple, Amazon, Spotify, YouTube)",
-    ],
-    featureCategories: [
-      {
-        category: "Product Hero & Immersion",
-        badge: "E-Commerce",
-        description: "Engaging visual showcase that highlights physical industrial design.",
-        items: [
-          "Immersive dark-mode product hero with floating device photography",
-          "Color variation selector with instant hardware finish preview",
-          "Clear pricing display ($299) with free shipping and 30-day money-back guarantee badges",
-          "One-tap 'Add to Bag' call-to-action with instant cart animation",
-        ],
-      },
-      {
-        category: "Technical Audio Specifications",
-        badge: "Acoustics",
-        description: "Engineered specs for audiophiles and technical buyers.",
-        items: [
-          "Acoustic driver breakdown: custom 40mm transducers and active noise cancellation (ANC)",
-          "Battery life indicator: 40 hours wireless playback with 10-minute Fast Fuel charge",
-          "Spatial audio & dynamic head tracking compatibility disclosure",
-          "Ergonomic ear cup comfort and lightweight folding design overview",
-        ],
-      },
-      {
-        category: "Ecosystem & Brand Trust",
-        badge: "Compatibility",
-        description: "Seamless wireless pairing with modern consumer hardware.",
-        items: [
-          "One-touch pairing compatibility with Apple iOS and Android ecosystems",
-          "Streaming service integration (Apple Music, Spotify, YouTube Music, Amazon)",
-          "Customer review summary and verified sound engineer endorsements",
-          "Secure checkout encryption badges and 1-year manufacturer warranty",
-        ],
-      },
-    ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
-    techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
-      tools: ["PostCSS", "Sharp WebP Pipeline", "ESLint"],
-    },
-    implementation: {
-      architecture:
-        "Engineered as an ultra-fast single-product D2C landing page optimized for high conversion rates and minimal script execution overhead.",
-      workflows: [
-        "Shopper views floating headphone hero and selects finish variation",
-        "Scrolls through interactive acoustic driver specs and battery metrics",
-        "Clicks 'Add to Bag' to initiate instant slide-over cart checkout",
-        "Proceeds to checkout with pre-applied shipping and warranty benefits",
-      ],
-      communication:
-        "Client state manages active color finish and cart quantity with zero latency; static server generation ensures instantaneous initial HTML rendering.",
-      technicalDecisions: [
-        "Kept the bundle size ultra-compact (<40KB first-load JS) to ensure immediate responsiveness on mobile ad traffic",
-        "Used CSS backdrop filters and hardware-accelerated transforms for smooth 60fps animations",
-        "Applied high-contrast typography against dark backgrounds for battery-efficient OLED display viewing",
-      ],
-      performanceSecurity: [
-        "Sub-800ms LCP (Largest Contentful Paint) on mobile 4G devices",
-        "Zero layout shift with strict aspect ratio containment on product images",
-        "Optimized WebP product assets reducing bandwidth by over 70%",
-      ],
-    },
-    role: "E-Commerce Frontend Engineer",
-    timeline: "1 week",
-    supportsIframe: false,
-    images: {
-      desktop: "/work/product-showcase/desktop.webp",
-      mobile: "/work/product-showcase/mobile.webp",
-    },
-    gallery: [
-      {
-        src: "/work/product-showcase/gallery/01-studio-headphones-hero.webp",
-        title: "Beats 3 Studio Over-Ear Product Hero",
-        description:
-          "Cinematic dark-mode showcase with acoustic driver clarity, matte finish, and wireless connectivity.",
-        category: "Product Hero",
-      },
-      {
-        src: "/work/product-showcase/gallery/02-ecommerce-cart-specs.webp",
-        title: "E-Commerce Specifications & Add to Bag Flow",
-        description:
-          "Itemized audio engineering specs, instant currency conversion (N399K), and frictionless cart intent.",
-        category: "Cart & Specs",
-      },
-      {
-        src: "/work/product-showcase/gallery/03-authorized-retailers.webp",
-        title: "Global Authorized Retail Partner Ecosystem",
-        description:
-          "Verified distributor channel integrations: Amazon, Apple, Spotify, and YouTube Music.",
-        category: "Distribution",
-      },
-    ],
-    results: [
-      "Sub-second LCP on 4G mobile devices",
-      "High-converting single product landing page structure",
-    ],
-    featured: false,
-  },
-  {
-    slug: "write-nova",
-    title: "WriteNova — AI Content Generation SaaS",
-    name: "WriteNova",
-    vertical: "SaaS",
-    status: "Concept",
-    tagline:
-      "Full-stack AI writing SaaS with OAuth, tokenized usage credits, and Stripe subscription billing.",
-    description:
-      "WriteNova is an AI writing software-as-a-service prototype engineered for creators, marketers, and agency founders. It streamlines writing workflows through specialized prompt templates (long-form blog posts, viral hooks, launch copy), Google OAuth authentication, tokenized credit tracking, and Stripe billing.",
-    problem:
-      "Creators and small agency owners struggle with fragmented writing workflows and complicated prompt interfaces.",
-    solution:
-      "A streamlined SaaS platform that packages task-specific prompt templates, Google OAuth session management, credit tracking, and Stripe checkout.",
-    features: [
-      "Task-specific prompt templates for blogs, hooks, and launch copy",
-      "Google OAuth & email magic-link user authentication",
-      "Stripe subscription billing & usage credit metering",
-    ],
-    stack: [
-      "Next.js",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Google Gemini API",
-      "Stripe",
-    ],
-    techStack: {
-      frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      backend: ["Node.js", "Express", "Serverless Routes"],
-      database: ["MongoDB (User Profiles & Generation Logs)"],
-      auth: ["Google OAuth", "JWT Sessions"],
-      integrations: ["Google Gemini API", "Stripe Billing & Webhooks"],
-      deployment: ["Vercel", "MongoDB Atlas"],
-      tools: ["ESLint", "PostCSS"],
-    },
-    role: "Full-Stack Engineer",
-    timeline: "3 weeks",
-    repoUrl: "https://github.com/nirajkumardangi",
-    supportsIframe: false,
-    images: {
-      desktop: "/work/write-nova/desktop.webp",
-      mobile: "/work/write-nova/mobile.webp",
-    },
-    gallery: [
-      {
-        src: "/work/write-nova/gallery/01-ai-editor-canvas.webp",
-        title: "AI Topic Prompt & Long-Form Document Editor",
-        description:
-          "Gemini-powered text generation canvas with real-time prompt engineering for local business playbooks.",
-        category: "AI Editor",
-      },
-      {
-        src: "/work/write-nova/gallery/02-templates-library.webp",
-        title: "SaaS Template Catalog & Workspace Switcher",
-        description:
-          "Pre-built conversion workflows: Long-form Blog Posts, LinkedIn Viral Hooks, and Product Launch Copy.",
-        category: "Templates",
-      },
-      {
-        src: "/work/write-nova/gallery/03-credit-usage-billing.webp",
-        title: "Real-Time Usage Metering & Credit Dashboard",
-        description:
-          "Stripe-backed token metering, active plan balance (420/500 credits), and account management.",
-        category: "Billing & Credits",
-      },
-    ],
-    results: [
-      "1,000+ generations processed in sandbox tests",
-      "End-to-end checkout & credit deduction verified in sandbox",
-    ],
-    featured: false,
   },
 ];
 
