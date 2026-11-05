@@ -92,7 +92,7 @@ export function SelectedWork() {
                       </div>
                     </div>
 
-                    {/* Mockup Frame with consistent 16:10 ratio & zero CLS */}
+                    {/* Mockup Frame with exact 16:9 ratio matching 1440x810 screenshots & zero CLS */}
                     <Link
                       href={`/work/${project.slug}`}
                       className="block relative w-full rounded-xl overflow-hidden border border-[var(--color-border)] bg-surface mb-5 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent group/frame"
@@ -115,7 +115,7 @@ export function SelectedWork() {
                       </div>
 
                       <div
-                        className="relative w-full aspect-[16/10] bg-[#0A0A0F]"
+                        className="relative w-full aspect-[16/9] bg-[#0A0A0F]"
                       >
                         <Image
                           src={project.images.desktop}

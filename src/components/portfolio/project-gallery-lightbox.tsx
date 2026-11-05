@@ -83,8 +83,8 @@ export function ProjectGalleryLightbox({
             onClick={() => setSelectedIndex(idx)}
             className="group cursor-pointer rounded-xl overflow-hidden border border-[var(--color-border)] bg-surface hover:border-[var(--color-border-md)] hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Image Preview Container with Zoom Overlay */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-bg">
+            {/* Image Preview Container with Zoom Overlay (exact 16:9 ratio to prevent cropping) */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-bg">
               <Image
                 src={item.src}
                 alt={item.title}

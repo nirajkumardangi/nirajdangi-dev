@@ -137,7 +137,7 @@ export function WorkClient() {
                   </div>
 
                   <div
-                    className="relative w-full aspect-[16/10] bg-[#0A0A0F]"
+                    className="relative w-full aspect-[16/9] bg-[#0A0A0F]"
                   >
                     <Image
                       src={project.images.desktop}
