@@ -2,13 +2,12 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
-  Stethoscope,
-  Palette,
+  Wrench,
   Camera,
   HeartHandshake,
-  CalendarDays,
-  Wrench,
+  Building2,
   Check,
   ArrowUpRight,
   MessageCircle,
@@ -27,6 +26,7 @@ interface VerticalItem {
   description: string;
   src: string;
   liveUrl?: string;
+  caseStudySlug?: string;
   benefits: [string, string, string];
   metricCallout: {
     stat: string;
@@ -36,43 +36,25 @@ interface VerticalItem {
 
 const VERTICALS: VerticalItem[] = [
   {
-    id: "doctor",
-    label: "Doctors & Clinics",
-    shortLabel: "Doctors",
-    icon: Stethoscope,
-    status: "Concept",
-    headline: "Medifine healthcare portal: 24/7 appointments booked directly.",
+    id: "service",
+    label: "Local Services (RO/Repair)",
+    shortLabel: "Local Services",
+    icon: Wrench,
+    status: "Live",
+    headline: "Rovala.in: Ranchi's on-demand RO service across 42 localities.",
     description:
-      "A medical site must establish immediate clinical credibility. Clear OPD timings, verified credentials, and 1-tap WhatsApp consultation tokens.",
-    src: "/work/doctor/desktop.webp",
+      "For RO purifier repairs and local home service brands in Ranchi. Upfront service menu, 15-day warranty, and doorstep dispatch via WhatsApp.",
+    src: "/work/rovala/desktop.webp",
+    liveUrl: "https://rovala.in",
+    caseStudySlug: "rovala-in",
     benefits: [
-      "Direct WhatsApp token booking reduces reception calls by 60%",
-      "Live clinic queue & OPD schedule status prevents waiting crowd",
-      "One-tap Google Maps directions for elderly patients and ambulances",
+      "42 Ranchi localities covered with ₹0 advance deposit",
+      "15-day service revisit warranty with genuine parts guarantee",
+      "1-tap WhatsApp booking sends locality and issue automatically",
     ],
     metricCallout: {
-      stat: "1-Tap",
-      label: "OPD WhatsApp Booking",
-    },
-  },
-  {
-    id: "artist",
-    label: "Artists & Creators",
-    shortLabel: "Artists",
-    icon: Palette,
-    status: "Concept",
-    headline: "Clean editorial canvas that puts your art first.",
-    description:
-      "For painters, sculptors, and digital creators. Warm gallery minimalism, canvas cataloging with availability tags, and direct studio commission inquiries.",
-    src: "/work/artist/preview.svg",
-    benefits: [
-      "Full-bleed high-res canvas viewing with zero visual clutter",
-      "Clear acquisition status: Available, In-Exhibition, or Acquired",
-      "Direct bespoke commission briefs straight to your email & WhatsApp",
-    ],
-    metricCallout: {
-      stat: "Direct",
-      label: "Studio Commissions",
+      stat: "42 Areas",
+      label: "Covered in Ranchi",
     },
   },
   {
@@ -86,6 +68,7 @@ const VERTICALS: VerticalItem[] = [
       "For commercial, wedding, and portrait photographers. Dark full-bleed galleries, transparent shoot packages, and fast client proofing portal teaser.",
     src: "/work/framer-lens/desktop.webp",
     liveUrl: "https://framer-lens.netlify.app/",
+    caseStudySlug: "framer-lens",
     benefits: [
       "Deep black stage that makes color-graded photography pop",
       "Transparent package rates to filter out budget tire-kickers",
@@ -97,70 +80,52 @@ const VERTICALS: VerticalItem[] = [
     },
   },
   {
-    id: "wedding",
-    label: "Wedding Planners",
-    shortLabel: "Wedding",
+    id: "food-donation",
+    label: "Food Donation (Relief)",
+    shortLabel: "Food Donation",
     icon: HeartHandshake,
-    status: "Concept",
-    headline: "Visual romance meets ruthless operational clarity.",
-    description:
-      "Weddings are emotional investments. Couples need to feel the elegance through real stories, venue walkthroughs, and limited date exclusivity.",
-    src: "/work/wedding/preview.svg",
-    benefits: [
-      "Real wedding gallery showcases with guest count & venue credits",
-      "Monthly date availability tracker showing remaining prime season dates",
-      "WhatsApp inquiry link pre-filled with wedding month and city",
-    ],
-    metricCallout: {
-      stat: "Date Lock",
-      label: "Calendar Exclusivity",
-    },
-  },
-  {
-    id: "event",
-    label: "Event Organisers",
-    shortLabel: "Events",
-    icon: CalendarDays,
-    status: "Concept",
-    headline: "Credibility to close state summits and corporate sponsors.",
-    description:
-      "For conference organizers, expo managers, and fest directors. Turnkey RFP downloads, speaker agendas, and sponsor deck requests.",
-    src: "/work/event/preview.svg",
-    benefits: [
-      "Turnkey speaker schedules, floor plans, and stage AV highlights",
-      "Instant sponsor deck & RFP download capture",
-      "Past expo metrics (footfall, trade booths, media reach)",
-    ],
-    metricCallout: {
-      stat: "Turnkey",
-      label: "Sponsor Deck Downloads",
-    },
-  },
-  {
-    id: "service",
-    label: "Local Services (RO/Repair)",
-    shortLabel: "Services",
-    icon: Wrench,
     status: "Live",
-    headline: "Rovala.in: Ranchi's on-demand RO service across 42 localities.",
+    headline: "FeedAid Foundation: Community food rescue connecting banquet halls to shelters.",
     description:
-      "For RO purifier repairs and local home service brands in Ranchi. Upfront service menu, 15-day warranty, and doorstep dispatch via WhatsApp.",
-    src: "/work/rovala/desktop.webp",
-    liveUrl: "https://rovala.in",
+      "For non-profit foundations, food drives, and community NGOs. Surplus meal reporting, automated volunteer dispatch, and transparent hunger relief trackers.",
+    src: "/work/feedaid/desktop.webp",
+    liveUrl: "https://feedaid.netlify.app/",
+    caseStudySlug: "feedaid",
     benefits: [
-      "42 Ranchi localities covered with ₹0 advance deposit",
-      "15-day service revisit warranty with genuine parts guarantee",
-      "1-tap WhatsApp booking sends locality and issue automatically",
+      "Instant surplus meal logging from wedding halls and corporate cafeterias",
+      "Transparent meal distribution metrics and donor community education",
+      "Volunteer dispatch and locality route tracking for emergency relief",
     ],
     metricCallout: {
-      stat: "42 Areas",
-      label: "Covered in Ranchi",
+      stat: "Surplus Rescue",
+      label: "Community Relief",
+    },
+  },
+  {
+    id: "real-estate",
+    label: "Real Estate",
+    shortLabel: "Real Estate",
+    icon: Building2,
+    status: "Live",
+    headline: "Modern Estate: Luxury architectural property listings with verified valuations.",
+    description:
+      "For luxury developers and property brokers. High-resolution architectural tours, transparent itemized pricing disclosures, and direct agent tour bookings.",
+    src: "/work/real-estate/desktop.webp",
+    caseStudySlug: "real-estate",
+    benefits: [
+      "High-contrast architectural gallery with floor plan specifications",
+      "Itemized pricing and verified property valuation disclosures",
+      "Direct WhatsApp agent consultation with pre-filled property reference",
+    ],
+    metricCallout: {
+      stat: "Architectural",
+      label: "Luxury Listings",
     },
   },
 ];
 
 export function VerticalsShowcase() {
-  const [selectedId, setSelectedId] = React.useState("doctor");
+  const [selectedId, setSelectedId] = React.useState("service");
   const tabListRef = React.useRef<HTMLDivElement>(null);
 
   const selectedIndex = VERTICALS.findIndex((v) => v.id === selectedId);
@@ -200,7 +165,7 @@ export function VerticalsShowcase() {
         {/* Section Header */}
         <div className="flex flex-col gap-4 max-w-3xl mb-12 md:mb-16">
           <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-white/50">
-            Tailored Architecture · 06 Verticals
+            Tailored Architecture · 04 Verticals
           </p>
 
           <h2 className="text-h2 font-semibold text-white tracking-tight text-balance">
@@ -211,9 +176,9 @@ export function VerticalsShowcase() {
           </h2>
 
           <p className="text-base sm:text-lg text-white/60 max-w-prose text-pretty">
-            A doctor&apos;s clinic needs appointment trust; a wedding planner
-            needs visual romance. Every site is designed around how your
-            customers actually decide.
+            A local service needs immediate booking trust; a photography portfolio
+            needs visual craft; a relief foundation needs transparent accountability.
+            Every site is designed around how your audience decides.
           </p>
         </div>
 
@@ -254,29 +219,29 @@ export function VerticalsShowcase() {
           </div>
         </div>
 
-        {/* Tab Panel: Two-column layout (Content + DeviceFrame) */}
+        {/* Dynamic Vertical Deep Dive Panel */}
         <div
           id={`panel-${activeVertical.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeVertical.id}`}
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
         >
-          {/* Left Column: What this site does for you */}
+          {/* Left Column: Proposition, Benefits, Metric Callout */}
           <div className="lg:col-span-5 flex flex-col gap-6 order-2 lg:order-1">
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2">
               <Badge variant={activeVertical.status}>
                 {activeVertical.status}
               </Badge>
-              <span className="font-mono text-xs uppercase tracking-wider text-white/70">
+              <span className="font-mono text-xs uppercase tracking-widest text-white/50">
                 Architecture Blueprint
               </span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
               {activeVertical.headline}
             </h3>
 
-            <p className="text-sm sm:text-base text-white/80 text-pretty leading-relaxed">
+            <p className="text-sm sm:text-base text-white/70 leading-relaxed">
               {activeVertical.description}
             </p>
 
@@ -322,15 +287,13 @@ export function VerticalsShowcase() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               ) : (
-                <a
-                  href={activeVertical.src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 h-11 px-4 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white transition-colors"
+                <Link
+                  href={`/work/${activeVertical.caseStudySlug || activeVertical.id}`}
+                  className="inline-flex items-center gap-1.5 h-11 px-4 rounded-md border border-white/20 text-xs font-mono uppercase tracking-wider text-white hover:bg-white/10 transition-colors"
                 >
-                  <span>View Full Mockup</span>
+                  <span>Explore Project</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               )}
             </div>
           </div>
@@ -354,7 +317,7 @@ export function VerticalsShowcase() {
                 </span>
               </div>
 
-              {/* Preview Image with constant aspect ratio to prevent ANY layout shift */}
+              {/* Preview Image with constant 16:9 aspect ratio to prevent ANY layout shift & cropping */}
               <div
                 className="relative overflow-hidden w-full bg-[#0F172A]"
                 style={{ aspectRatio: "16/9" }}
@@ -364,6 +327,7 @@ export function VerticalsShowcase() {
                   src={activeVertical.src}
                   alt={`${activeVertical.label} website layout mockup`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 700px"
                   className="object-cover object-top select-none animate-fade-in"
                   unoptimized={activeVertical.src.endsWith(".svg")}
                 />
