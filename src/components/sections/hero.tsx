@@ -95,11 +95,10 @@ export function Hero() {
 
             {/* H1: strictly <= 12 words with ONE Instrument Serif italic accent word */}
             <h1 className="text-h1 font-bold text-ink tracking-tight text-balance">
-              Websites that get your clinic,{" "}
+              We build websites that help your business{" "}
               <span className="font-serif italic font-normal text-accent">
-                studio
-              </span>{" "}
-              or brand enquiries.
+                grow.
+              </span>
             </h1>
 
             {/* One-line Subheading */}

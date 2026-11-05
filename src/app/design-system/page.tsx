@@ -111,8 +111,8 @@ export default function DesignSystemPage() {
             <div>
               <p className="font-mono text-[10px] text-muted mb-3 tracking-widest uppercase">H1 — Geist Sans Semibold</p>
               <p className="text-h1 font-semibold text-ink tracking-[-0.04em] leading-[1.02] text-balance">
-                Websites that get your clinic,{" "}
-                <span className="font-serif italic">studio</span> or brand enquiries.
+                We build websites that help your business{" "}
+                <span className="font-serif italic">grow.</span>
               </p>
             </div>
             <div>

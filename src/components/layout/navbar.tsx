@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/#work", label: "Work" },
   { href: "/#services", label: "Services" },
   { href: "/#pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
   { href: "/#about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -139,8 +140,9 @@ export function Navbar() {
             <nav className="hidden md:flex items-center gap-1" aria-label="Main Navigation">
               {NAV_LINKS.map((link) => {
                 const isActive =
-                  activeSection === link.label.toLowerCase() ||
-                  pathname === link.href;
+                  (link.href.startsWith("/#") && activeSection === link.label.toLowerCase()) ||
+                  pathname === link.href ||
+                  (link.href === "/blog" && pathname.startsWith("/blog"));
 
                 return (
                   <Link
@@ -250,8 +252,9 @@ export function Navbar() {
                 </p>
                 {NAV_LINKS.map((link) => {
                   const isActive =
-                    activeSection === link.label.toLowerCase() ||
-                    pathname === link.href;
+                    (link.href.startsWith("/#") && activeSection === link.label.toLowerCase()) ||
+                    pathname === link.href ||
+                    (link.href === "/blog" && pathname.startsWith("/blog"));
 
                   return (
                     <Link

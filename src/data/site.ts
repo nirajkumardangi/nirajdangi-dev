@@ -2,7 +2,7 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "niraj.",
-  tagline: "Websites that get your clinic, studio or brand enquiries.",
+  tagline: "We Build Websites That Help Your Business Grow.",
   description:
     "Custom-designed and built for businesses in Ranchi and beyond. Fast on mobile. Clear to your customers. Yours to keep.",
   url: "https://niraj.online",
