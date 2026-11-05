@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card } from "@/components/ui/card";
@@ -38,26 +39,29 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-20">
           {/* Left Column: Portrait Frame & Human Story */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Portrait Frame with proper aspect ratio & fallback */}
-            <div className="relative rounded-2xl overflow-hidden border border-[var(--color-border)] bg-bg shadow-sm">
-              <div
-                className="relative w-full flex flex-col items-center justify-center p-8 bg-gradient-to-b from-surface to-bg"
-                style={{ aspectRatio: "4/4.5" }}
-              >
-                {/* Clean avatar badge representation */}
-                <div className="w-28 h-28 rounded-full bg-accent/15 border-2 border-accent/30 flex items-center justify-center mb-4 text-accent text-3xl font-bold font-serif italic shadow-inner">
-                  NKD
-                </div>
-                <h3 className="text-xl font-bold text-ink">{aboutData.name}</h3>
-                <p className="font-mono text-xs text-muted mt-1 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-accent" />
-                  <span>{aboutData.location}</span>
-                </p>
-
-                <div className="mt-6 px-4 py-2 rounded-full bg-surface border border-[var(--color-border)] shadow-xs">
-                  <p className="font-mono text-[11px] text-muted text-center">
-                    [PORTRAIT PHOTO PENDING]
-                  </p>
+            {/* Portrait Frame with real photograph */}
+            <div className="relative rounded-2xl overflow-hidden border border-[var(--color-border)] bg-surface shadow-sm">
+              <div className="relative w-full aspect-[4/4.8] sm:aspect-[4/4.5] overflow-hidden bg-bg">
+                <Image
+                  src="/images/niraj-portrait.jpg"
+                  alt="Niraj Kumar Dangi — Freelance Full-Stack Developer in Ranchi"
+                  fill
+                  sizes="(min-width: 1024px) 380px, 100vw"
+                  className="object-cover object-top hover:scale-[1.02] transition-transform duration-500 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white">
+                  <div>
+                    <h3 className="text-lg font-bold drop-shadow-xs">{aboutData.name}</h3>
+                    <p className="font-mono text-xs text-white/90 flex items-center gap-1 drop-shadow-xs">
+                      <MapPin className="w-3 h-3 text-accent" />
+                      <span>{aboutData.location}</span>
+                    </p>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-xs border border-white/20 text-[11px] font-mono text-white/95">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                    Available
+                  </span>
                 </div>
               </div>
 

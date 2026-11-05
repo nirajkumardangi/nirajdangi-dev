@@ -15,8 +15,8 @@ Local citations establish geographic authority and validate entity authenticity 
 | **State** | `Jharkhand` |
 | **PIN / Postal Code** | `834001` |
 | **Country** | `India (IN)` |
-| **Phone / WhatsApp** | `+91 99554 48248` |
-| **Email** | `nirajdangi9955@gmail.com` |
+| **Phone / WhatsApp** | `+91 88252 24435` |
+| **Email** | `nirajkrdangi@gmail.com` |
 | **Website** | `https://niraj.online` |
 
 ---

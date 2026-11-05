@@ -49,8 +49,8 @@ This document defines the entity model for **Niraj Kumar Dangi** and **niraj.onl
   - Latitude: `23.3441`
   - Longitude: `85.3096`
 - **Contact Details**:
-  - Telephone: `+91 99554 48248`
-  - Email: `nirajdangi9955@gmail.com`
+  - Telephone: `+91 88252 24435`
+  - Email: `nirajkrdangi@gmail.com`
 - **Price Range**: `₹₹ / $$` (Starter ₹4,999 / $300 USD)
 
 ---

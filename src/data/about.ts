@@ -12,10 +12,10 @@ export const aboutData: AboutData = {
   ],
   education: {
     degree: "Master of Computer Applications (MCA)",
-    institution: "Ranchi University / Affiliated Institute",
+    institution: "Doranda College (Ranchi University)",
     location: "Ranchi, Jharkhand",
     focus:
-      "Software Engineering, Distributed Systems & Applied Artificial Intelligence",
+      "Software Engineering, Distributed Systems & Web Technologies",
   },
   principles: [
     {
