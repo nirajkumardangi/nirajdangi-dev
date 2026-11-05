@@ -130,7 +130,7 @@ export const projects: Project[] = [
     liveUrl: "https://rovala.in",
     supportsIframe: false,
     iframeBlockedReason:
-      "Direct embedded iframe is protected by Rovala server security headers (X-Frame-Options: SAMEORIGIN). Click 'Open Live Site' to interact with the production system.",
+      "Direct embedded iframe is protected - Click 'Open Live Site' to interact with the production system.",
     images: {
       desktop: "/work/rovala/desktop.webp",
       mobile: "/work/rovala/mobile.webp",
@@ -381,10 +381,10 @@ export const projects: Project[] = [
         ],
       },
     ],
-    stack: ["React", "Foirebase", "Firestore", "Tailwind CSS"],
+    stack: ["React", "Firebase", "Firestore", "Tailwind CSS"],
     techStack: {
       frontend: ["React 18", "Tailwind CSS", "Lucide React"],
-      backend: ["Foirebase", "Firestore"],
+      backend: ["Firebase", "Firestore"],
       deployment: ["Netlify Global CDN", "Git & GitHub"],
       tools: ["PostCSS", "Sharp WebP Pipeline", "Git"],
     },

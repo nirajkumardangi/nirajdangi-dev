@@ -22,9 +22,22 @@ export function ProjectGalleryLightbox({
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
 
   const isOpen = selectedIndex !== null;
-  const currentItem = selectedIndex !== null && items[selectedIndex] ? items[selectedIndex] : null;
+  const currentItem =
+    selectedIndex !== null && items[selectedIndex] ? items[selectedIndex] : null;
 
-  // Keyboard navigation for Lightbox (always called before any returns)
+  // Prevent background body scroll when lightbox modal is open
+  React.useEffect(() => {
+    if (!isOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isOpen]);
+
+  // Keyboard navigation for Lightbox
   React.useEffect(() => {
     if (!isOpen || items.length === 0) return;
 
@@ -52,7 +65,10 @@ export function ProjectGalleryLightbox({
   }
 
   return (
-    <section aria-labelledby="heading-gallery" className="pt-12 border-t border-[var(--color-border)]">
+    <section
+      aria-labelledby="heading-gallery"
+      className="pt-12 border-t border-[var(--color-border)]"
+    >
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
         <div>
@@ -71,7 +87,9 @@ export function ProjectGalleryLightbox({
         </div>
         <div className="flex items-center gap-2 text-xs font-mono text-muted">
           <Layers className="w-3.5 h-3.5 text-accent" />
-          <span>{items.length} verified screenshot{items.length > 1 ? "s" : ""}</span>
+          <span>
+            {items.length} verified screenshot{items.length > 1 ? "s" : ""}
+          </span>
         </div>
       </div>
 
@@ -125,33 +143,41 @@ export function ProjectGalleryLightbox({
           role="dialog"
           aria-modal="true"
           aria-label={`${currentItem.title} full-screen viewer`}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 sm:p-6 animate-in fade-in duration-200"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 sm:p-8 cursor-pointer select-none animate-in fade-in duration-200"
           onClick={() => setSelectedIndex(null)}
         >
-          {/* Top Modal Controls */}
+          {/* TOP CONTROLS BAR */}
+          {/* Top Left Counter & Title */}
           <div
-            className="absolute top-4 left-4 right-4 flex items-center justify-between text-white z-20"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed top-4 left-4 sm:top-6 sm:left-6 z-[1000] flex items-center gap-2.5 px-3.5 py-2 rounded-full bg-zinc-900/90 border border-white/15 backdrop-blur-md text-xs font-mono pointer-events-none shadow-xl"
           >
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-xs text-zinc-400">
-                {selectedIndex + 1} of {items.length}
-              </span>
-              <span className="text-zinc-600">·</span>
-              <span className="text-xs font-medium text-white truncate max-w-xs sm:max-w-md">
-                {currentItem.title}
-              </span>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setSelectedIndex(null)}
-              className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-              aria-label="Close full-screen image"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <span className="text-accent font-semibold">
+              {selectedIndex + 1}/{items.length}
+            </span>
+            <span className="text-zinc-600">·</span>
+            <span className="text-zinc-200 font-sans truncate max-w-[180px] sm:max-w-xs md:max-w-md">
+              {currentItem.title}
+            </span>
           </div>
+
+          {/* Top Right Prominent Close Button */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedIndex(null);
+            }}
+            className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[1000] flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/95 hover:bg-zinc-800 active:scale-95 text-white border border-white/25 hover:border-white/50 shadow-2xl transition-all cursor-pointer group focus:outline-none focus:ring-2 focus:ring-accent"
+            aria-label="Close modal viewer (Esc)"
+          >
+            <span className="text-xs font-mono font-medium tracking-wide text-zinc-300 group-hover:text-white">
+              Close
+            </span>
+            <span className="hidden sm:inline-block text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-zinc-400 group-hover:text-zinc-200">
+              Esc
+            </span>
+            <X className="w-4 h-4 text-white group-hover:rotate-90 transition-transform duration-200" />
+          </button>
 
           {/* Previous Button */}
           {items.length > 1 && (
@@ -163,10 +189,10 @@ export function ProjectGalleryLightbox({
                   (prev) => (prev! - 1 + items.length) % items.length
                 );
               }}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-20 hidden sm:flex items-center justify-center"
+              className="fixed left-3 sm:left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/90 hover:bg-zinc-800 active:scale-95 text-white border border-white/20 shadow-2xl transition-all z-[1000] flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-accent"
               aria-label="Previous screenshot"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 text-zinc-300 group-hover:text-white group-hover:-translate-x-0.5 transition-transform" />
             </button>
           )}
 
@@ -178,36 +204,46 @@ export function ProjectGalleryLightbox({
                 e.stopPropagation();
                 setSelectedIndex((prev) => (prev! + 1) % items.length);
               }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-20 hidden sm:flex items-center justify-center"
+              className="fixed right-3 sm:right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-zinc-900/90 hover:bg-zinc-800 active:scale-95 text-white border border-white/20 shadow-2xl transition-all z-[1000] flex items-center justify-center cursor-pointer group focus:outline-none focus:ring-2 focus:ring-accent"
               aria-label="Next screenshot"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 text-zinc-300 group-hover:text-white group-hover:translate-x-0.5 transition-transform" />
             </button>
           )}
 
-          {/* Centered High-Res Image View */}
+          {/* Centered Image Card (stops click propagation so only clicking image card doesn't close) */}
           <div
-            className="relative max-w-5xl max-h-[80vh] w-full h-full flex flex-col items-center justify-center"
+            className="relative flex flex-col items-center max-w-5xl max-h-[82vh] cursor-default z-[999] mx-auto px-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full h-full max-h-[72vh] rounded-lg overflow-hidden border border-white/15 bg-black">
+            {/* 16:9 Image Container */}
+            <div className="relative rounded-xl overflow-hidden border border-white/20 bg-black shadow-2xl flex items-center justify-center max-h-[72vh]">
               <Image
                 src={currentItem.src}
                 alt={currentItem.title}
-                fill
+                width={1440}
+                height={810}
                 priority
-                sizes="100vw"
-                className="object-contain"
+                className="max-h-[72vh] w-auto h-auto max-w-full object-contain select-none"
                 unoptimized={currentItem.src.endsWith(".svg")}
               />
             </div>
 
-            {/* Bottom Caption */}
-            <div className="mt-3 text-center max-w-2xl px-4">
-              <p className="text-xs text-zinc-300 leading-relaxed">
-                {currentItem.description}
-              </p>
-            </div>
+            {/* Bottom Caption Pill */}
+            {currentItem.description && (
+              <div className="mt-3 text-center max-w-xl px-4 py-2 rounded-lg bg-zinc-900/90 border border-white/10 shadow-lg">
+                <p className="text-xs text-zinc-300 leading-relaxed font-sans">
+                  {currentItem.description}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Dismissal Hint Footer */}
+          <div className="fixed bottom-4 inset-x-0 flex justify-center pointer-events-none z-[1000]">
+            <span className="text-[11px] font-mono text-zinc-400 bg-zinc-950/80 px-3.5 py-1.5 rounded-full border border-white/10 backdrop-blur-md shadow-lg">
+              Click anywhere outside or press Esc to close
+            </span>
           </div>
         </div>
       )}
