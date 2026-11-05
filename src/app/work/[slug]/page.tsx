@@ -130,9 +130,22 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               </div>
             </div>
 
-            <span className="font-mono text-[11px] text-muted uppercase">
-              {project.role}
-            </span>
+            <div className="flex items-center gap-3">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent text-white font-medium text-xs hover:bg-accent/90 transition-colors shadow-xs"
+                >
+                  <span>Open Live Website</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              )}
+              <span className="hidden sm:inline-block font-mono text-[11px] text-muted uppercase">
+                {project.role}
+              </span>
+            </div>
           </div>
 
           <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
@@ -293,29 +306,31 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                   <Badge variant={project.status}>{project.status}</Badge>
                 </div>
 
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline"
-                  >
-                    <span>Visit Live Site</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                <div className="flex items-center gap-3">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-accent hover:underline"
+                    >
+                      <span>Visit Live Site</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
 
-                {project.repoUrl && !project.liveUrl && (
-                  <a
-                    href={project.repoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-ink hover:underline"
-                  >
-                    <span>View Repository</span>
-                    <Code2 className="w-3.5 h-3.5" />
-                  </a>
-                )}
+                  {project.repoUrl && (
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted hover:text-ink hover:underline"
+                    >
+                      <span>Repository</span>
+                      <Code2 className="w-3.5 h-3.5" />
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* Role & Scope */}

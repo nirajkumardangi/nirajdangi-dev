@@ -12,7 +12,9 @@ export type ProjectVertical =
   | "Service"
   | "AI"
   | "SaaS"
-  | "Personal";
+  | "Personal"
+  | "Real Estate"
+  | "E-commerce";
 
 export interface Project {
   slug: string;

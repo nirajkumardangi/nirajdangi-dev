@@ -47,66 +47,89 @@ export function SelectedWork() {
         {/* Bento Grid: Varied layout on desktop (2-col & 1-col cards), 1-col on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
           {featuredProjects.map((project, idx) => {
-            // Bento sizing: 1st and 6th span 7 columns, others span 5 or 6
+            // Bento sizing: 1st and 4th span 7 columns, others span 5
             const isWide = idx === 0 || idx === 3;
             const colSpan = isWide ? "lg:col-span-7" : "lg:col-span-5";
 
             return (
               <div key={project.slug} className={`col-span-1 md:col-span-1 ${colSpan}`}>
-                <Link
-                  href={`/work/${project.slug}`}
-                  className="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg"
+                <Card
+                  spotlight
+                  className="h-full flex flex-col justify-between p-5 sm:p-6 transition-all duration-300 hover:border-[var(--color-border-md)] hover:shadow-md group"
                 >
-                  <Card
-                    spotlight
-                    className="h-full flex flex-col justify-between p-5 sm:p-6 transition-all duration-300 group-hover:border-[var(--color-border-md)] group-hover:shadow-md"
-                  >
-                    <div>
-                      {/* Top Bar: Vertical tag + Status Badge + Arrow */}
-                      <div className="flex items-center justify-between gap-2 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Badge variant={project.status}>
-                            {project.status}
-                          </Badge>
-                          <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                            {project.vertical}
-                          </span>
-                        </div>
-
-                        <div className="w-8 h-8 rounded-full bg-[rgba(10,10,20,0.04)] dark:bg-white/10 flex items-center justify-center text-muted group-hover:text-ink group-hover:bg-accent/10 transition-colors">
-                          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </div>
+                  <div>
+                    {/* Top Bar: Vertical tag + Status Badge + Live Preview button */}
+                    <div className="flex items-center justify-between gap-2 mb-4">
+                      <div className="flex items-center gap-2">
+                        <Badge variant={project.status}>
+                          {project.status}
+                        </Badge>
+                        <span className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                          {project.vertical}
+                        </span>
                       </div>
 
-                      {/* Mockup Frame with consistent 16:10 ratio & zero CLS */}
-                      <div className="relative w-full rounded-md overflow-hidden border border-[var(--color-border)] bg-bg mb-5 shadow-xs">
-                        <div
-                          className="relative w-full"
-                          style={{ aspectRatio: "16/10" }}
+                      <div className="flex items-center gap-2">
+                        {project.liveUrl && (
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent/10 hover:bg-accent/20 text-accent font-medium text-xs transition-colors"
+                            aria-label={`Open live preview of ${project.name || project.title}`}
+                          >
+                            <span>Live Preview</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        )}
+                        <Link
+                          href={`/work/${project.slug}`}
+                          className="w-8 h-8 rounded-full bg-[rgba(10,10,20,0.04)] dark:bg-white/10 flex items-center justify-center text-muted group-hover:text-ink group-hover:bg-accent/10 transition-colors"
+                          aria-label={`View case study of ${project.title}`}
                         >
-                          <Image
-                            src={project.images.desktop}
-                            alt={`${project.title} screenshot preview`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                            className="object-cover object-top transition-transform duration-500 ease-out-expo group-hover:scale-[1.01]"
-                            unoptimized={project.images.desktop.endsWith(".svg")}
-                          />
-                        </div>
+                          <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </Link>
                       </div>
-
-                      {/* Title & Tagline */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-2 group-hover:text-accent transition-colors">
-                        {project.title}
-                      </h3>
-
-                      <p className="text-sm text-muted text-pretty leading-relaxed mb-4">
-                        {project.tagline}
-                      </p>
                     </div>
 
-                    {/* Footer: Tech Stack Chips */}
-                    <div className="flex flex-wrap items-center gap-1.5 pt-4 border-t border-[var(--color-border)]">
+                    {/* Mockup Frame with consistent 16:10 ratio & zero CLS */}
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="block relative w-full rounded-md overflow-hidden border border-[var(--color-border)] bg-bg mb-5 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    >
+                      <div
+                        className="relative w-full"
+                        style={{ aspectRatio: "16/10" }}
+                      >
+                        <Image
+                          src={project.images.desktop}
+                          alt={`${project.title} screenshot preview`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                          className="object-cover object-top transition-transform duration-500 ease-out-expo group-hover:scale-[1.01]"
+                          unoptimized={project.images.desktop.endsWith(".svg")}
+                        />
+                      </div>
+                    </Link>
+
+                    {/* Title & Tagline */}
+                    <h3 className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-2">
+                      <Link
+                        href={`/work/${project.slug}`}
+                        className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+                      >
+                        {project.title}
+                      </Link>
+                    </h3>
+
+                    <p className="text-sm text-muted text-pretty leading-relaxed mb-4">
+                      {project.tagline}
+                    </p>
+                  </div>
+
+                  {/* Footer: Tech Stack Chips + Action Link */}
+                  <div className="flex items-center justify-between gap-3 pt-4 border-t border-[var(--color-border)]">
+                    <div className="flex flex-wrap items-center gap-1.5">
                       {project.stack.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
@@ -116,8 +139,16 @@ export function SelectedWork() {
                         </span>
                       ))}
                     </div>
-                  </Card>
-                </Link>
+
+                    <Link
+                      href={`/work/${project.slug}`}
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline shrink-0"
+                    >
+                      <span>Case Study</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </Card>
               </div>
             );
           })}

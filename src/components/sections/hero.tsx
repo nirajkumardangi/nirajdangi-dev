@@ -4,6 +4,7 @@ import * as React from "react";
 import {
   MessageCircle,
   ArrowDown,
+  ArrowUpRight,
   MapPin,
   Clock,
   ShieldCheck,
@@ -18,28 +19,39 @@ import { useReducedMotion } from "motion/react";
 
 const HERO_PROJECTS = [
   {
-    id: "doctor",
-    title: "Dr. Verma Cardiology Clinic",
-    vertical: "Doctor / Clinic",
-    status: "Concept" as const,
-    src: "/work/doctor/preview.svg",
-    description: "Instant WhatsApp OPD booking with live token queue.",
+    id: "rovala",
+    title: "Rovala.in — Doorstep RO Purifier Service",
+    vertical: "Live Service Platform",
+    status: "Live" as const,
+    src: "/work/rovala/desktop.webp",
+    description: "Doorstep RO service across 42 Ranchi localities with ₹0 advance booking.",
+    liveUrl: "https://rovala.in",
   },
   {
-    id: "wedding",
-    title: "Utsav Luxury Weddings",
-    vertical: "Wedding & Events",
-    status: "Concept" as const,
-    src: "/work/wedding/preview.svg",
-    description: "Visual-first wedding showcase with date availability checks.",
+    id: "framer-lens",
+    title: "LENS — Visual Storytelling Photography",
+    vertical: "Live Portfolio",
+    status: "Live" as const,
+    src: "/work/framer-lens/desktop.webp",
+    description: "Editorial photography portfolio with session booking and dynamic masonry galleries.",
+    liveUrl: "https://framer-lens.netlify.app/",
+  },
+  {
+    id: "feedaid",
+    title: "FeedAid Foundation — Food Redistribution",
+    vertical: "Live Relief Platform",
+    status: "Live" as const,
+    src: "/work/feedaid/desktop.webp",
+    description: "Community surplus food rescue connecting banquet halls with local shelters.",
+    liveUrl: "https://feedaid.netlify.app/",
   },
   {
     id: "ai-assistant",
-    title: "AI Knowledge Assistant",
-    vertical: "AI / RAG",
+    title: "AI Knowledge Assistant — Local RAG Pipeline",
+    vertical: "Local AI / RAG",
     status: "Concept" as const,
-    src: "/work/ai-assistant/preview.svg",
-    description: "Local-first document Q&A assistant with zero cloud leakage.",
+    src: "/work/ai-assistant/desktop.webp",
+    description: "Air-gapped document intelligence platform using ChromaDB and local LLMs.",
   },
 ];
 
@@ -162,11 +174,25 @@ export function Hero() {
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E] shrink-0" aria-hidden="true" />
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#28C840] shrink-0" aria-hidden="true" />
                   <div className="hidden min-[420px]:block ml-2 px-2.5 py-0.5 rounded bg-bg border border-[var(--color-border)] text-[11px] font-mono text-muted truncate max-w-[130px] sm:max-w-xs">
-                    https://preview.niraj.online/{currentProject.id}
+                    {"liveUrl" in currentProject && currentProject.liveUrl
+                      ? currentProject.liveUrl
+                      : `https://preview.niraj.online/${currentProject.id}`}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 shrink-0">
+                  {"liveUrl" in currentProject && currentProject.liveUrl && (
+                    <a
+                      href={currentProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent/10 hover:bg-accent/20 text-accent font-medium text-xs transition-colors"
+                      aria-label={`Open live site of ${currentProject.title}`}
+                    >
+                      <span>Visit Live</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                   <Badge variant={currentProject.status}>
                     {currentProject.status}
                   </Badge>
@@ -200,7 +226,7 @@ export function Hero() {
                         sizes="(max-width: 768px) 100vw, 1200px"
                         className="object-cover object-top select-none"
                         priority={idx === 0}
-                        unoptimized
+                        unoptimized={project.src.endsWith(".svg")}
                       />
                     </div>
                   );
@@ -210,12 +236,25 @@ export function Hero() {
 
             {/* Cycler Project Controls & Caption */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 px-1">
-              <p className="text-xs sm:text-sm text-muted">
-                <strong className="font-semibold text-ink">
-                  {currentProject.title}:
-                </strong>{" "}
-                {currentProject.description}
-              </p>
+              <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                <p className="text-xs sm:text-sm text-muted">
+                  <strong className="font-semibold text-ink">
+                    {currentProject.title}:
+                  </strong>{" "}
+                  {currentProject.description}
+                </p>
+                {"liveUrl" in currentProject && currentProject.liveUrl && (
+                  <a
+                    href={currentProject.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-accent hover:underline"
+                  >
+                    <span>Launch Live Site</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+                )}
+              </div>
 
               {/* Manual Selection Pills */}
               <div

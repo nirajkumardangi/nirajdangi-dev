@@ -26,6 +26,7 @@ interface VerticalItem {
   headline: string;
   description: string;
   src: string;
+  liveUrl?: string;
   benefits: [string, string, string];
   metricCallout: {
     stat: string;
@@ -40,10 +41,10 @@ const VERTICALS: VerticalItem[] = [
     shortLabel: "Doctors",
     icon: Stethoscope,
     status: "Concept",
-    headline: "Appointments booked directly. Zero waiting-room confusion.",
+    headline: "Medifine healthcare portal: 24/7 appointments booked directly.",
     description:
       "A medical site must establish immediate clinical credibility. Clear OPD timings, verified credentials, and 1-tap WhatsApp consultation tokens.",
-    src: "/work/doctor/preview.svg",
+    src: "/work/doctor/desktop.webp",
     benefits: [
       "Direct WhatsApp token booking reduces reception calls by 60%",
       "Live clinic queue & OPD schedule status prevents waiting crowd",
@@ -79,19 +80,20 @@ const VERTICALS: VerticalItem[] = [
     label: "Photographers",
     shortLabel: "Photographers",
     icon: Camera,
-    status: "Concept",
-    headline: "Editorial portfolio built to command premium commercial rates.",
+    status: "Live",
+    headline: "LENS Photography: Editorial visual storytelling with session booking.",
     description:
       "For commercial, wedding, and portrait photographers. Dark full-bleed galleries, transparent shoot packages, and fast client proofing portal teaser.",
-    src: "/work/photographer/preview.svg",
+    src: "/work/framer-lens/desktop.webp",
+    liveUrl: "https://framer-lens.netlify.app/",
     benefits: [
       "Deep black stage that makes color-graded photography pop",
       "Transparent package rates to filter out budget tire-kickers",
       "Easy date reservation for commercial and wedding shoots",
     ],
     metricCallout: {
-      stat: "Package",
-      label: "Upfront Day Rates",
+      stat: "Live Site",
+      label: "LENS Photography",
     },
   },
   {
@@ -136,22 +138,23 @@ const VERTICALS: VerticalItem[] = [
   },
   {
     id: "service",
-    label: "Local Services (AC/RO)",
+    label: "Local Services (RO/Repair)",
     shortLabel: "Services",
     icon: Wrench,
-    status: "Concept",
-    headline: "Transparent pricing that wins the job in 30 seconds.",
+    status: "Live",
+    headline: "Rovala.in: Ranchi's on-demand RO service across 42 localities.",
     description:
-      "For AC repair, water purifier technicians, and local home service brands in Ranchi. Upfront service menu with instant doorstep dispatch via WhatsApp.",
-    src: "/work/service/preview.svg",
+      "For RO purifier repairs and local home service brands in Ranchi. Upfront service menu, 15-day warranty, and doorstep dispatch via WhatsApp.",
+    src: "/work/rovala/desktop.webp",
+    liveUrl: "https://rovala.in",
     benefits: [
-      "Fixed rate cards (e.g., ₹499 Jet Wash) remove customer doubt",
-      "Local neighborhood coverage list builds instant neighborhood trust",
-      "1-tap WhatsApp booking sends location and issue automatically",
+      "42 Ranchi localities covered with ₹0 advance deposit",
+      "15-day service revisit warranty with genuine parts guarantee",
+      "1-tap WhatsApp booking sends locality and issue automatically",
     ],
     metricCallout: {
-      stat: "30-Sec",
-      label: "Fastest Doorstep Dispatch",
+      stat: "42 Areas",
+      label: "Covered in Ranchi",
     },
   },
 ];
@@ -308,15 +311,27 @@ export function VerticalsShowcase() {
                 <span>Discuss {activeVertical.shortLabel} site</span>
               </a>
 
-              <a
-                href={activeVertical.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 h-11 px-4 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white transition-colors"
-              >
-                <span>View Full Mockup</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              {activeVertical.liveUrl ? (
+                <a
+                  href={activeVertical.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 h-11 px-4 rounded-md border border-white/20 text-xs font-mono uppercase tracking-wider text-white hover:bg-white/10 transition-colors"
+                >
+                  <span>Visit Live Website</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              ) : (
+                <a
+                  href={activeVertical.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 h-11 px-4 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white transition-colors"
+                >
+                  <span>View Full Mockup</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              )}
             </div>
           </div>
 
@@ -330,7 +345,7 @@ export function VerticalsShowcase() {
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E]/80 shrink-0" aria-hidden="true" />
                   <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#28C840]/80 shrink-0" aria-hidden="true" />
                   <div className="hidden min-[420px]:block ml-2 px-2.5 py-0.5 rounded bg-white/10 text-[11px] font-mono text-white/80 truncate max-w-[130px] sm:max-w-xs">
-                    https://demo.niraj.online/{activeVertical.id}
+                    {activeVertical.liveUrl || `https://demo.niraj.online/${activeVertical.id}`}
                   </div>
                 </div>
 
@@ -350,7 +365,7 @@ export function VerticalsShowcase() {
                   alt={`${activeVertical.label} website layout mockup`}
                   fill
                   className="object-cover object-top select-none animate-fade-in"
-                  unoptimized
+                  unoptimized={activeVertical.src.endsWith(".svg")}
                 />
               </div>
             </div>

@@ -622,14 +622,14 @@ export const solutions: Solution[] = [
     },
     timeline: "7 to 14 days",
     proof: {
-      slug: "ananya-sen-art",
-      name: "Ananya Sen Fine Art & Utsav Luxury Weddings",
-      status: "Concept",
-      description: "Bespoke fine art catalog and editorial luxury wedding brand showcases engineered for visual fidelity.",
+      slug: "framer-lens",
+      name: "LENS Photography & Niraj Portfolio",
+      status: "Live",
+      description: "Live editorial photography showcase and interactive developer dashboard engineered for visual craft and client trust.",
       featuresDemonstrated: [
-        "Editorial art viewer with artwork dimensions, medium, and acquisition status",
-        "Monthly wedding date availability tracker with direct banquet inquiry prefill",
-        "60fps gesture-based motion tabs and safe-area drawer navigation",
+        "Full-bleed visual storytelling layout with session inquiry booking",
+        "Categorized architectural and portrait galleries with zero layout shift",
+        "60fps gesture-based motion transitions and fast mobile loading",
       ],
     },
     complianceNotes:
@@ -712,9 +712,9 @@ export const solutions: Solution[] = [
     timeline: "10 to 18 days",
     proof: {
       slug: "feedaid",
-      name: "FeedAid Relief Platform",
-      status: "Concept",
-      description: "Community surplus food redistribution platform connecting banquet hosts with local shelters in Ranchi.",
+      name: "FeedAid Foundation",
+      status: "Live",
+      description: "Live community surplus food redistribution platform connecting banquet hosts with local shelters in Ranchi.",
       featuresDemonstrated: [
         "Real-time surplus meal notification dispatch with volunteer geofencing",
         "Hygienic verification checklist and temperature validation logging",
