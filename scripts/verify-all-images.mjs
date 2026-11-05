@@ -41,3 +41,4 @@ async function checkAll() {
   console.log("All images check completed. Issues found:", issues);
 }
 checkAll().catch(console.error);
+

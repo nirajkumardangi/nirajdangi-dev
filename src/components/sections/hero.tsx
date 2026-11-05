@@ -66,6 +66,7 @@ export function Hero() {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [isPaused, setIsPaused] = React.useState(false);
   const shouldReduceMotion = useReducedMotion();
+  const sectionRef = React.useRef<HTMLElement>(null);
 
   // Gentle automatic cycling every 5 seconds, pauses on hover or if reduced motion is enabled
   React.useEffect(() => {
@@ -78,22 +79,94 @@ export function Hero() {
     return () => clearInterval(interval);
   }, [isPaused, shouldReduceMotion]);
 
+  // Smooth pointer tracking for dark mode interactive glowing grid spotlight
+  const handlePointerMove = React.useCallback(
+    (e: React.PointerEvent<HTMLElement>) => {
+      if (!sectionRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      sectionRef.current.style.setProperty("--mouse-x", `${x}px`);
+      sectionRef.current.style.setProperty("--mouse-y", `${y}px`);
+      sectionRef.current.style.setProperty("--spotlight-opacity", "1");
+    },
+    []
+  );
+
+  const handlePointerLeave = React.useCallback(() => {
+    if (!sectionRef.current) return;
+    sectionRef.current.style.setProperty("--spotlight-opacity", "0");
+  }, []);
+
   const currentProject = HERO_PROJECTS[activeIndex];
 
   return (
     <section
+      ref={sectionRef}
       aria-label="Hero"
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       className="relative pt-28 pb-16 md:pt-36 md:pb-24 lg:pt-40 lg:pb-28 overflow-hidden border-b border-[var(--color-border)]"
-      style={{
-        backgroundImage: `
-          radial-gradient(circle at 50% 25%, rgba(91, 91, 214, 0.05), transparent 60%),
-          linear-gradient(rgba(10, 10, 20, 0.035) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(10, 10, 20, 0.035) 1px, transparent 1px)
-        `,
-        backgroundSize: "100% 100%, 40px 40px, 40px 40px",
-      }}
     >
-      <Container>
+      {/* 1. Light Mode Subtle Static Grid (Matches existing light design) */}
+      <div
+        className="absolute inset-0 pointer-events-none dark:hidden"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 50% 25%, rgba(91, 91, 214, 0.05), transparent 60%),
+            linear-gradient(rgba(10, 10, 20, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(10, 10, 20, 0.035) 1px, transparent 1px)
+          `,
+          backgroundSize: "100% 100%, 40px 40px, 40px 40px",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* 2. Dark Mode Ambient Background Glow */}
+      <div
+        className="absolute inset-0 pointer-events-none hidden dark:block"
+        style={{
+          backgroundImage: `radial-gradient(circle at 50% 20%, rgba(91, 91, 214, 0.08), transparent 70%)`,
+        }}
+        aria-hidden="true"
+      />
+
+      {/* 3. Dark Mode Interactive Glowing Grid Spotlight Layer */}
+      <div
+        className="absolute inset-0 pointer-events-none hidden dark:block ease-out"
+        style={{
+          opacity: "var(--spotlight-opacity, 0)",
+          transition: shouldReduceMotion ? "none" : "opacity 0.4s ease-out",
+          maskImage:
+            "radial-gradient(380px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), black 0%, rgba(0,0,0,0.5) 60%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(380px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), black 0%, rgba(0,0,0,0.5) 60%, transparent 100%)",
+        }}
+        aria-hidden="true"
+      >
+        {/* Glowing Cursor Radial Bloom */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(520px circle at var(--mouse-x, -9999px) var(--mouse-y, -9999px), rgba(91, 91, 214, 0.22), transparent 70%)`,
+          }}
+        />
+
+        {/* Luminous Grid Lines with Crossing Dots */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(129, 140, 248, 0.4) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(129, 140, 248, 0.4) 1px, transparent 1px),
+              radial-gradient(circle 1.5px at 1px 1px, rgba(199, 210, 254, 0.95) 100%, transparent 0)
+            `,
+            backgroundSize: "40px 40px, 40px 40px, 40px 40px",
+          }}
+        />
+      </div>
+
+      <Container className="relative z-10">
         <div className="flex flex-col gap-12 lg:gap-16">
           {/* Top: Headline & Positioning Copy (Mobile-first stack) */}
           <div className="flex flex-col items-start gap-6 max-w-3xl">
