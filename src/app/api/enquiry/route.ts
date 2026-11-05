@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
 
     const apiKey = process.env.RESEND_API_KEY;
     const targetEmail =
-      process.env.CONTACT_EMAIL || "dangink88@gmail.com";
+      process.env.CONTACT_EMAIL || "nirajkrdangi@gmail.com";
 
     // 5. Send Email via Resend if API key is provided
     if (apiKey && apiKey.trim().length > 0 && !apiKey.startsWith("re_xxx")) {
