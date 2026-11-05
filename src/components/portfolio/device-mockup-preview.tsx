@@ -50,8 +50,8 @@ export function DeviceMockupPreview({
   return (
     <div className="w-full flex flex-col items-center mb-16">
       {/* Top Device & Mode Control Bar */}
-      <div className="w-full max-w-5xl flex flex-wrap items-center justify-between gap-3 p-2.5 mb-6 rounded-2xl bg-surface border border-[var(--color-border)] shadow-xs">
-        {/* Left: Device Switcher (Desktop / Mobile) */}
+      <div className="w-full max-w-6xl flex flex-wrap items-center justify-between gap-3 p-2.5 mb-6 rounded-2xl bg-surface border border-[var(--color-border)] shadow-xs">
+        {/* Left: Device Switcher (21:9 UltraWide / Bezel-less Mobile) */}
         <div className="flex items-center gap-1.5 p-1 rounded-xl bg-bg border border-[var(--color-border)]">
           <button
             type="button"
@@ -61,10 +61,10 @@ export function DeviceMockupPreview({
                 ? "bg-ink text-bg font-semibold shadow-xs"
                 : "text-muted hover:text-ink"
             }`}
-            aria-label="Switch to iMac Desktop Preview"
+            aria-label="Switch to 21:9 UltraWide Monitor Preview"
           >
             <Monitor className="w-4 h-4" />
-            <span>iMac Desktop</span>
+            <span>21:9 UltraWide</span>
           </button>
 
           <button
@@ -75,10 +75,10 @@ export function DeviceMockupPreview({
                 ? "bg-ink text-bg font-semibold shadow-xs"
                 : "text-muted hover:text-ink"
             }`}
-            aria-label="Switch to iPhone Mobile Preview"
+            aria-label="Switch to Bezel-less Mobile Preview"
           >
             <Smartphone className="w-4 h-4" />
-            <span>iPhone Mobile</span>
+            <span>Bezel-less Mobile</span>
           </button>
         </div>
 
@@ -150,7 +150,7 @@ export function DeviceMockupPreview({
 
       {/* Security notice for blocked iframe sites (e.g. rovala.in) */}
       {!supportsIframe && liveUrl && iframeBlockedReason && (
-        <div className="w-full max-w-5xl mb-4 px-4 py-2.5 rounded-xl bg-surface border border-[var(--color-border)] flex items-center justify-between text-xs text-muted">
+        <div className="w-full max-w-6xl mb-4 px-4 py-2.5 rounded-xl bg-surface border border-[var(--color-border)] flex items-center justify-between text-xs text-muted">
           <div className="flex items-center gap-2">
             <Lock className="w-3.5 h-3.5 text-accent shrink-0" />
             <span>{iframeBlockedReason}</span>
@@ -167,45 +167,41 @@ export function DeviceMockupPreview({
       )}
 
       {/* DEVICE MOCKUP CONTAINER */}
-      <div className="w-full max-w-5xl flex justify-center items-center">
+      <div className="w-full max-w-6xl flex justify-center items-center">
         {device === "desktop" ? (
-          /* 💻 PREMIUM IMAC DESKTOP MOCKUP */
+          /* ============================================================ */
+          /* 🖥️ PREMIUM 21:9 BEZEL-LESS ULTRAWIDE MONITOR                  */
+          /* ============================================================ */
           <div className="w-full flex flex-col items-center">
-            {/* iMac Screen Chassis */}
-            <div className="w-full rounded-[24px] p-2.5 sm:p-3 bg-gradient-to-b from-[#2E2E38] via-[#1F1F24] to-[#121217] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)]">
-              {/* Ultra-thin Inner Bezel */}
-              <div className="w-full rounded-[18px] overflow-hidden bg-black border border-black/40 flex flex-col">
-                {/* Top Bezel with FaceTime Camera Dot */}
-                <div className="w-full h-4 bg-[#0E0E12] flex items-center justify-center relative">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1C1C24] ring-1 ring-white/10 flex items-center justify-center">
-                    <div className="w-0.5 h-0.5 rounded-full bg-[#0084FF]/60" />
-                  </div>
-                </div>
+            {/* Monitor Outer Chassis with Bezel-less Micro-Rim */}
+            <div className="w-full rounded-[18px] p-1.5 sm:p-2 bg-gradient-to-b from-[#2F2F3D] via-[#1A1A22] to-[#0E0E14] border border-white/15 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.6)] relative group">
+              {/* Subtle top edge glare reflection */}
+              <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
-                {/* macOS Safari Browser Chrome Bar */}
-                <div className="flex items-center justify-between px-3 sm:px-4 py-2 bg-[#1A1A22] border-b border-white/5 select-none">
+              {/* Edge-to-Edge Bezel-less Display Panel */}
+              <div className="w-full rounded-[14px] overflow-hidden bg-black border border-white/5 flex flex-col">
+                {/* Ultra-slim Minimal Browser Bar */}
+                <div className="flex items-center justify-between px-3 sm:px-4 py-1.5 bg-[#14141B] border-b border-white/5 select-none text-[11px] font-mono text-zinc-400">
                   {/* Traffic lights */}
-                  <div className="flex items-center gap-1.5 w-16">
+                  <div className="flex items-center gap-1.5 w-20">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-[#E0443E]/40" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#群体A123]/40" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-[#DEA123]/40" />
                     <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-[#1AAB29]/40" />
                   </div>
 
-                  {/* Centered URL Address Bar */}
-                  <div className="flex-1 max-w-sm sm:max-w-md mx-2 px-3 py-1 rounded-md bg-[#0E0E14] border border-white/10 flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                  {/* Centered Floating Address Pill */}
+                  <div className="flex-1 max-w-md sm:max-w-lg mx-2 px-3 py-1 rounded-full bg-[#0A0A0F] border border-white/10 flex items-center justify-between text-[11px] font-mono text-zinc-400 shadow-inner">
                     <div className="flex items-center gap-1.5 truncate">
                       <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
                       <span className="truncate">{currentDisplayUrl}</span>
                     </div>
-                    {liveUrl && (
-                      <span className="hidden sm:inline-block text-[9px] uppercase tracking-wider text-zinc-400 font-mono">
-                        SSL
-                      </span>
-                    )}
+                    <span className="hidden sm:inline-block text-[9px] uppercase tracking-wider text-accent font-semibold px-2 py-0.5 rounded-full bg-accent/10">
+                      21:9 UltraWide
+                    </span>
                   </div>
 
-                  {/* Right role tag */}
-                  <div className="flex items-center justify-end gap-2 w-20">
+                  {/* Right role/spec tag */}
+                  <div className="flex items-center justify-end gap-2 w-24">
                     {role && (
                       <span className="hidden sm:inline-block font-mono text-[9px] text-zinc-400 uppercase truncate">
                         {role}
@@ -214,22 +210,22 @@ export function DeviceMockupPreview({
                   </div>
                 </div>
 
-                {/* Screen Viewport (16:10 Aspect Ratio) */}
-                <div className="relative w-full aspect-[16/10] bg-[#0A0A0F] overflow-hidden">
+                {/* 21:9 Aspect Ratio Viewport */}
+                <div className="relative w-full aspect-[21/9] bg-[#0A0A0F] overflow-hidden">
                   {mode === "iframe" && liveUrl && supportsIframe ? (
                     <>
                       {isLoadingIframe && (
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface gap-3 z-10">
                           <div className="w-8 h-8 rounded-full border-2 border-accent border-t-transparent animate-spin" />
                           <p className="font-mono text-xs text-muted">
-                            Loading live {title} website...
+                            Loading 21:9 live {title} website...
                           </p>
                         </div>
                       )}
                       <iframe
                         key={iframeKey}
                         src={liveUrl}
-                        title={`${title} live interactive preview`}
+                        title={`${title} 21:9 live interactive preview`}
                         className="w-full h-full border-0 select-auto"
                         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                         loading="lazy"
@@ -237,68 +233,88 @@ export function DeviceMockupPreview({
                       />
                     </>
                   ) : (
-                    <Image
-                      src={desktopImage}
-                      alt={`${title} iMac desktop preview`}
-                      fill
-                      priority
-                      sizes="(max-width: 1200px) 100vw, 1200px"
-                      className="object-cover object-top select-none"
-                      unoptimized={desktopImage.endsWith(".svg")}
-                    />
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={desktopImage}
+                        alt={`${title} 21:9 UltraWide preview`}
+                        fill
+                        priority
+                        sizes="(max-width: 1400px) 100vw, 1400px"
+                        className="object-cover object-top select-none"
+                        unoptimized={desktopImage.endsWith(".svg")}
+                      />
+                    </div>
                   )}
                 </div>
 
-                {/* Bottom iMac Aluminum Chin */}
-                <div className="w-full h-7 sm:h-9 bg-gradient-to-r from-[#202026] via-[#2A2A34] to-[#202026] border-t border-white/10 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                  </div>
+                {/* Micro Bezel Bottom Rim with Centered Power LED */}
+                <div className="w-full h-1 bg-[#1A1A22] border-t border-white/5 flex items-center justify-center">
+                  <div className="w-1.5 h-0.5 rounded-full bg-emerald-400/80 shadow-[0_0_6px_#10B981]" />
                 </div>
               </div>
             </div>
 
-            {/* iMac Stand Neck & Base */}
+            {/* Futuristic Minimalist Monitor Stand */}
             <div className="flex flex-col items-center">
-              <div className="w-20 sm:w-28 h-8 sm:h-12 bg-gradient-to-b from-[#2A2A34] to-[#1E1E24] border-x border-white/10 shadow-inner" />
-              <div className="w-40 sm:w-56 h-3 sm:h-4 rounded-t-sm rounded-b-md bg-gradient-to-r from-[#1C1C22] via-[#33333E] to-[#1C1C22] border-t border-white/15 shadow-[0_12px_24px_rgba(0,0,0,0.5)]" />
+              {/* Stand Neck / Articulated Column */}
+              <div className="w-12 sm:w-16 h-7 sm:h-10 bg-gradient-to-b from-[#202028] via-[#2A2A36] to-[#14141A] border-x border-white/10 shadow-inner" />
+              {/* Sleek Low-Profile Geometric Pedestal */}
+              <div className="w-48 sm:w-72 h-2.5 sm:h-3 rounded-full bg-gradient-to-r from-[#181820] via-[#323240] to-[#181820] border-t border-white/20 shadow-[0_15px_30px_rgba(0,0,0,0.6)]" />
+              {/* Ambient LED Bias Light Glow Reflection */}
+              <div className="w-72 sm:w-96 h-3 bg-accent/20 blur-xl -mt-1 pointer-events-none" />
             </div>
           </div>
         ) : (
-          /* 📱 PREMIUM IPHONE MOBILE MOCKUP */
+          /* ============================================================ */
+          /* 📱 BEZEL-LESS FLAGSHIP MOBILE (Modern Infinity Display)      */
+          /* ============================================================ */
           <div className="flex flex-col items-center py-4">
-            <div className="relative w-[320px] sm:w-[360px] md:w-[380px] rounded-[52px] p-3.5 bg-gradient-to-b from-[#383842] via-[#22222A] to-[#16161C] border border-white/15 shadow-[0_30px_70px_-15px_rgba(0,0,0,0.55)]">
-              {/* Outer side buttons */}
-              <div className="absolute -left-1 top-24 w-1 h-8 rounded-l bg-zinc-600" />
-              <div className="absolute -left-1 top-36 w-1 h-12 rounded-l bg-zinc-600" />
-              <div className="absolute -left-1 top-52 w-1 h-12 rounded-l bg-zinc-600" />
-              <div className="absolute -right-1 top-32 w-1 h-16 rounded-r bg-zinc-600" />
+            {/* Flagship Chassis with Edge-to-Edge Curves & Micro Titanium Rim */}
+            <div className="relative w-[310px] sm:w-[350px] md:w-[370px] rounded-[36px] p-2 sm:p-2.5 bg-gradient-to-b from-[#383846] via-[#1F1F28] to-[#121218] border border-white/20 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.65)]">
+              {/* Subtle metallic antenna bands */}
+              <div className="absolute -left-1 top-20 w-1 h-3 rounded-l bg-zinc-500/80" />
+              <div className="absolute -left-1 bottom-24 w-1 h-3 rounded-l bg-zinc-500/80" />
+              <div className="absolute -right-1 top-28 w-1 h-10 rounded-r bg-zinc-600" />
+              <div className="absolute -right-1 top-44 w-1 h-14 rounded-r bg-zinc-600" />
 
-              {/* Inner screen frame */}
-              <div className="relative w-full rounded-[44px] overflow-hidden bg-black border border-black/80 flex flex-col">
-                {/* Status Bar */}
-                <div className="w-full h-11 bg-black px-6 flex items-center justify-between z-20 select-none">
-                  <span className="font-semibold text-xs tracking-tight text-white font-sans">
-                    9:41
+              {/* Edge-to-Edge Bezel-less Display Glass */}
+              <div className="relative w-full rounded-[28px] overflow-hidden bg-black border border-white/10 flex flex-col">
+                {/* Modern Punch-Hole Status Bar */}
+                <div className="w-full h-9 bg-black/90 backdrop-blur-md px-5 flex items-center justify-between z-20 select-none text-white text-[11px] font-sans">
+                  {/* Left: Time (12:45) */}
+                  <span className="font-semibold tracking-tight text-zinc-200">
+                    12:45
                   </span>
 
-                  {/* Dynamic Island */}
-                  <div className="w-24 h-6 rounded-full bg-black ring-1 ring-white/10 flex items-center justify-between px-2.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#0A0A10] ring-1 ring-white/15 flex items-center justify-center">
-                      <div className="w-1 h-1 rounded-full bg-[#0084FF]/70" />
+                  {/* Center: Tiny Punch-Hole Camera Cutout (Bezel-less Flagship style) */}
+                  <div className="w-3.5 h-3.5 rounded-full bg-black ring-1 ring-white/15 flex items-center justify-center shadow-inner">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#0A1020] flex items-center justify-center">
+                      <div className="w-0.5 h-0.5 rounded-full bg-[#0088FF]/70" />
                     </div>
-                    <div className="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse" />
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-white">
-                    <span className="text-[10px] font-mono">5G</span>
-                    <div className="w-4 h-2.5 rounded-sm border border-white/70 p-0.5 flex items-center">
-                      <div className="w-full h-full bg-white rounded-2xs" />
+                  {/* Right: Modern Flagship Connectivity (5G, Wi-Fi, 98% Battery) */}
+                  <div className="flex items-center gap-1.5 text-zinc-300">
+                    <span className="text-[10px] font-mono font-medium">5G</span>
+                    {/* Wi-Fi Wave Indicator */}
+                    <svg
+                      className="w-3 h-3 fill-current"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-5c-2.8 0-5.3 1.1-7.1 2.9l1.4 1.4C7.7 15.9 9.7 15 12 15s4.3.9 5.7 2.3l1.4-1.4C17.3 14.1 14.8 13 12 13zm0-5C7.6 8 3.6 9.8.8 12.6l1.4 1.4C4.6 11.6 8.1 10 12 10s7.4 1.6 9.8 4l1.4-1.4C20.4 9.8 16.4 8 12 8z" />
+                    </svg>
+                    {/* Battery Capsule */}
+                    <div className="flex items-center gap-0.5">
+                      <span className="text-[9px] font-mono">98%</span>
+                      <div className="w-4 h-2 rounded-[2px] border border-white/70 p-[1px] flex items-center">
+                        <div className="w-full h-full bg-emerald-400 rounded-2xs" />
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Mobile Viewport */}
+                {/* Mobile Viewport (19.5:9 Ultra-Tall Aspect Ratio) */}
                 <div className="relative w-full aspect-[9/19.5] bg-[#0A0A0F] overflow-hidden">
                   {mode === "iframe" && liveUrl && supportsIframe ? (
                     <>
@@ -313,7 +329,7 @@ export function DeviceMockupPreview({
                       <iframe
                         key={`m-${iframeKey}`}
                         src={liveUrl}
-                        title={`${title} iPhone mobile preview`}
+                        title={`${title} bezel-less mobile preview`}
                         className="w-full h-full border-0 select-auto"
                         sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                         loading="lazy"
@@ -323,7 +339,7 @@ export function DeviceMockupPreview({
                   ) : hasMobileImage && mobileImage ? (
                     <Image
                       src={mobileImage}
-                      alt={`${title} iPhone mobile preview`}
+                      alt={`${title} bezel-less mobile preview`}
                       fill
                       priority
                       sizes="(max-width: 480px) 100vw, 400px"
@@ -342,14 +358,15 @@ export function DeviceMockupPreview({
                   )}
                 </div>
 
-                {/* Home Indicator */}
-                <div className="w-full h-6 bg-black flex items-center justify-center z-20">
-                  <div className="w-32 h-1 rounded-full bg-white/40" />
+                {/* Modern Android Gesture Bar */}
+                <div className="w-full h-5 bg-black/90 backdrop-blur-md flex items-center justify-center z-20">
+                  <div className="w-24 h-1 rounded-full bg-white/50" />
                 </div>
               </div>
             </div>
 
-            <div className="w-48 h-4 rounded-full bg-black/40 blur-md mt-2" />
+            {/* Subtle Flagship Drop Shadow */}
+            <div className="w-52 h-4 rounded-full bg-black/50 blur-lg mt-3" />
           </div>
         )}
       </div>

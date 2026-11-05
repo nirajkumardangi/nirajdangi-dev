@@ -180,12 +180,12 @@ export function WorkClient() {
                   <div className="flex items-center gap-2 font-mono text-[11px]">
                     <span className="inline-flex items-center gap-1 text-ink">
                       <Monitor className="w-3.5 h-3.5 text-accent" />
-                      iMac
+                      21:9 UltraWide
                     </span>
                     {project.images.mobile && (
                       <span className="inline-flex items-center gap-1 text-ink">
                         <Smartphone className="w-3.5 h-3.5 text-accent" />
-                        iPhone
+                        Mobile
                       </span>
                     )}
                   </div>

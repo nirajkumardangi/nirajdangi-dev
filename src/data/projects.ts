@@ -435,7 +435,7 @@ export const projects: Project[] = [
         "Custom 3D developer avatar with interactive workspace illustrations",
         "Live GitHub shipping metrics: 36+ public repositories and 803+ annual contributions",
         "Applied AI & Computer Vision showcases including local RAG and YOLO models",
-        "Direct live iframe preview support embedded inside iMac and iPhone frames",
+        "Direct live iframe preview support embedded inside 21:9 UltraWide and Mobile frames",
       ],
     },
     problem:

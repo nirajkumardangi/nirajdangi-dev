@@ -128,7 +128,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </p>
         </header>
 
-        {/* 1. LIVE WEBSITE PREVIEW (iMac Desktop & iPhone Mobile Frames) */}
+        {/* 1. LIVE WEBSITE PREVIEW (21:9 UltraWide Monitor & Bezel-less Mobile) */}
         <DeviceMockupPreview
           title={project.name || project.title}
           liveUrl={project.liveUrl}
@@ -318,7 +318,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                     </span>
                   ) : (
                     <span className="text-muted">
-                      Ultra-HD Crisp Capture (iMac / iPhone)
+                      Ultra-HD Crisp Capture (21:9 UltraWide / Mobile)
                     </span>
                   )}
                 </p>
