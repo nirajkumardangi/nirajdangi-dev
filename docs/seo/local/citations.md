@@ -42,7 +42,7 @@ Complete registration on these platforms using the master NAP specifications:
 
 ## 3. Submission Protocol & Audit Tracking
 
-1. Use a single business email (`nirajdangi9955@gmail.com`) for all directory verifications.
+1. Use a single business email (`nirajkrdangi@gmail.com`) for all directory verifications.
 2. Maintain an audit log:
    - Platform name
    - Profile URL

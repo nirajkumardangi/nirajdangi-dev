@@ -10,7 +10,7 @@
 - Primary Website: https://niraj.online
 - GitHub: https://github.com/nirajkumardangi
 - LinkedIn: https://linkedin.com/in/nirajkumardangi
-- Primary Contact: WhatsApp +91 99554 48248 | Email nirajdangi9955@gmail.com
+- Primary Contact: WhatsApp +91 99554 48248 | Email nirajkrdangi@gmail.com
 
 ## Engineering Solutions & Architectures
 1. E-Commerce & Online Stores (https://niraj.online/solutions/ecommerce-development): Custom Next.js storefronts with Razorpay/Stripe checkout and automated WhatsApp order dispatch. Zero recurring platform subscription fees.

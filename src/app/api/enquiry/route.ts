@@ -167,31 +167,23 @@ export async function POST(request: NextRequest) {
         </div>
       `;
 
+      const fromAddress =
+        process.env.RESEND_FROM_EMAIL ||
+        (process.env.RESEND_FROM_DOMAIN
+          ? `Niraj Kumar Dangi <hello@${process.env.RESEND_FROM_DOMAIN}>`
+          : "niraj.online Enquiries <onboarding@resend.dev>");
+
       const { data: resendData, error: resendError } = await resend.emails.send({
-        from: "niraj.online Enquiries <onboarding@resend.dev>",
+        from: fromAddress,
         to: targetEmail,
         subject: `[New Enquiry] ${data.name} — ${businessLabel}`,
         html: htmlBody,
       });
 
       if (resendError) {
-        console.error("[Resend Primary Error]:", resendError);
-        // Resend sandbox only delivers to the account signup email (dangink88@gmail.com)
-        if (targetEmail !== "dangink88@gmail.com") {
-          const fallback = await resend.emails.send({
-            from: "niraj.online Enquiries <onboarding@resend.dev>",
-            to: "dangink88@gmail.com",
-            subject: `[New Enquiry] ${data.name} — ${businessLabel}`,
-            html: htmlBody,
-          });
-          if (fallback.error) {
-            console.error("[Resend Fallback Error]:", fallback.error);
-          } else {
-            console.log("[Resend Delivered to fallback dangink88@gmail.com]:", fallback.data?.id);
-          }
-        }
+        console.error("[Resend Error]:", resendError);
       } else {
-        console.log("[Resend Email Sent Successfully]:", resendData?.id);
+        console.log(`[Resend Delivered to ${targetEmail}]:`, resendData?.id);
       }
 
       // Optional auto-reply to client (only active if custom verified domain is set)
