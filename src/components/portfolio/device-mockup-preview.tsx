@@ -341,8 +341,8 @@ export function DeviceMockupPreview({
           /* 📱 BEZEL-LESS FLAGSHIP MOBILE (Modern Infinity Display)      */
           /* ============================================================ */
           <div className="flex flex-col items-center py-4">
-            {/* Flagship Chassis with Edge-to-Edge Curves & Micro Titanium Rim */}
-            <div className="relative w-[310px] sm:w-[350px] md:w-[370px] rounded-[36px] p-2 sm:p-2.5 bg-gradient-to-b from-[#383846] via-[#1F1F28] to-[#121218] border border-white/20 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.65)]">
+            {/* Flagship Chassis with Edge-to-Edge Curves & Micro Titanium Rim (wider & ergonomic proportions) */}
+            <div className="relative w-[340px] sm:w-[385px] md:w-[410px] rounded-[38px] p-2 sm:p-2.5 bg-gradient-to-b from-[#383846] via-[#1F1F28] to-[#121218] border border-white/20 shadow-[0_35px_80px_-15px_rgba(0,0,0,0.65)]">
               {/* Subtle metallic antenna bands */}
               <div className="absolute -left-1 top-20 w-1 h-3 rounded-l bg-zinc-500/80" />
               <div className="absolute -left-1 bottom-24 w-1 h-3 rounded-l bg-zinc-500/80" />
@@ -350,7 +350,7 @@ export function DeviceMockupPreview({
               <div className="absolute -right-1 top-44 w-1 h-14 rounded-r bg-zinc-600" />
 
               {/* Edge-to-Edge Bezel-less Display Glass */}
-              <div className="relative w-full rounded-[28px] overflow-hidden bg-black border border-white/10 flex flex-col">
+              <div className="relative w-full rounded-[30px] overflow-hidden bg-black border border-white/10 flex flex-col">
                 {/* Modern Punch-Hole Status Bar */}
                 <div className="w-full h-9 bg-black/90 backdrop-blur-md px-5 flex items-center justify-between z-20 select-none text-white text-[11px] font-sans">
                   {/* Left: Time (12:45) */}
@@ -386,10 +386,10 @@ export function DeviceMockupPreview({
                   </div>
                 </div>
 
-                {/* Mobile Viewport (19.5:9 Ultra-Tall Aspect Ratio) */}
+                {/* Mobile Viewport (18:9 Balanced Flagship Aspect Ratio) */}
                 <div
                   ref={mobileViewportRef}
-                  className="relative w-full aspect-[9/19.5] bg-[#0A0A0F] overflow-hidden"
+                  className="relative w-full aspect-[9/18] bg-[#0A0A0F] overflow-hidden"
                 >
                   {mode === "iframe" && liveUrl && supportsIframe ? (
                     <>
@@ -401,12 +401,12 @@ export function DeviceMockupPreview({
                           </p>
                         </div>
                       )}
-                      {/* Scaled Mobile Canvas (390x845 native resolution) */}
+                      {/* Scaled Mobile Canvas (390x780 native resolution) */}
                       <div
                         className="absolute top-0 left-0 pointer-events-auto"
                         style={{
                           width: 390,
-                          height: 845,
+                          height: 780,
                           transform: `scale(${mobileScale})`,
                           transformOrigin: "top left",
                         }}
@@ -415,8 +415,8 @@ export function DeviceMockupPreview({
                           key={`m-${iframeKey}`}
                           src={liveUrl}
                           title={`${title} bezel-less mobile preview`}
-                          style={{ width: 390, height: 845 }}
-                          className="w-[390px] h-[845px] border-0 select-auto"
+                          style={{ width: 390, height: 780 }}
+                          className="w-[390px] h-[780px] border-0 select-auto"
                           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
                           loading="lazy"
                           onLoad={() => setIsLoadingIframe(false)}
@@ -453,7 +453,7 @@ export function DeviceMockupPreview({
             </div>
 
             {/* Subtle Flagship Drop Shadow */}
-            <div className="w-52 h-4 rounded-full bg-black/50 blur-lg mt-3" />
+            <div className="w-64 h-4 rounded-full bg-black/50 blur-lg mt-3" />
           </div>
         )}
       </div>

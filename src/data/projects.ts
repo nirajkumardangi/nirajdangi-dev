@@ -662,14 +662,29 @@ export const projects: Project[] = [
     supportsIframe: false,
     images: {
       desktop: "/work/ai-assistant/desktop.webp",
+      mobile: "/work/ai-assistant/mobile.webp",
     },
     gallery: [
       {
-        src: "/work/ai-assistant/desktop.webp",
-        title: "Local RAG Pipeline Dashboard",
+        src: "/work/ai-assistant/gallery/01-rag-chat-interface.webp",
+        title: "Air-Gapped RAG Document Query Interface",
         description:
-          "Air-gapped document Q&A interface with source citations and local model parameters.",
-        category: "System Overview",
+          "Interactive chat UI with multi-turn grounding, syntax-highlighted code generation, and Word/PDF export.",
+        category: "Q&A Interface",
+      },
+      {
+        src: "/work/ai-assistant/gallery/02-knowledge-base-ingestion.webp",
+        title: "ChromaDB Document Ingestion & Vector Index",
+        description:
+          "Local document upload pipeline with automatic chunking, embedding generation, and ChromaDB sync.",
+        category: "Vector Store",
+      },
+      {
+        src: "/work/ai-assistant/gallery/03-token-latency-sources.webp",
+        title: "Source Grounding & Inference Metrics",
+        description:
+          "Real-time token generation timing, data source provenance tracking, and local LLM parameter controls.",
+        category: "Metrics & Logs",
       },
     ],
     results: [
@@ -780,14 +795,29 @@ export const projects: Project[] = [
     supportsIframe: false,
     images: {
       desktop: "/work/doctor/desktop.webp",
+      mobile: "/work/doctor/mobile.webp",
     },
     gallery: [
       {
-        src: "/work/doctor/desktop.webp",
-        title: "Medifine Clinic Healthcare Portal",
+        src: "/work/doctor/gallery/01-clinical-hero.webp",
+        title: "Medifine Clinic Healthcare Portal Hero",
         description:
-          "Mobile-first medical appointment scheduler with emergency hotline and doctor directory.",
-        category: "Portal Overview",
+          "Emergency clinical hotline, 24/7 patient consultation banner, and instant OPD token scheduling.",
+        category: "Hero & Emergency",
+      },
+      {
+        src: "/work/doctor/gallery/02-specialist-credentials.webp",
+        title: "Verified Specialist Credentials & Trust Profile",
+        description:
+          "Clinical background, practitioner certifications, and verified patient care reviews.",
+        category: "Clinical Trust",
+      },
+      {
+        src: "/work/doctor/gallery/03-appointment-opd-flow.webp",
+        title: "Frictionless Appointment & OPD Booking Flow",
+        description:
+          "One-tap slot booking with instant confirmation and clinic directions.",
+        category: "OPD Booking",
       },
     ],
     results: [
@@ -897,14 +927,29 @@ export const projects: Project[] = [
     supportsIframe: false,
     images: {
       desktop: "/work/real-estate/desktop.webp",
+      mobile: "/work/real-estate/mobile.webp",
     },
     gallery: [
       {
-        src: "/work/real-estate/desktop.webp",
-        title: "Modern Estate Architectural Showcase",
+        src: "/work/real-estate/gallery/01-luxury-villa-hero.webp",
+        title: "Modern Estate Architectural Portfolio Hero",
         description:
-          "Editorial luxury property listings with price filters, spec sheets, and direct tour booking.",
-        category: "Catalog Showcase",
+          "High-end architectural property showcase with contemporary villa listings and verified market pricing.",
+        category: "Hero & Listings",
+      },
+      {
+        src: "/work/real-estate/gallery/02-midtown-architectural-villa.webp",
+        title: "Midtown Luxury Contemporary Villa",
+        description:
+          "Detailed architectural view featuring natural light photography, floor plans, and $205,500 valuation.",
+        category: "Featured Estate",
+      },
+      {
+        src: "/work/real-estate/gallery/03-property-pricing-details.webp",
+        title: "Itemized Property Specifications & Booking",
+        description:
+          "Clear pricing disclosures, square footage breakdown, and one-click private agent tour consultation.",
+        category: "Specifications",
       },
     ],
     results: [
@@ -1014,14 +1059,29 @@ export const projects: Project[] = [
     supportsIframe: false,
     images: {
       desktop: "/work/product-showcase/desktop.webp",
+      mobile: "/work/product-showcase/mobile.webp",
     },
     gallery: [
       {
-        src: "/work/product-showcase/desktop.webp",
-        title: "Beats 3 E-Commerce Product Showcase",
+        src: "/work/product-showcase/gallery/01-studio-headphones-hero.webp",
+        title: "Beats 3 Studio Over-Ear Product Hero",
         description:
-          "Dark-mode product landing page with acoustic driver breakdown and instant bag checkout.",
+          "Cinematic dark-mode showcase with acoustic driver clarity, matte finish, and wireless connectivity.",
         category: "Product Hero",
+      },
+      {
+        src: "/work/product-showcase/gallery/02-ecommerce-cart-specs.webp",
+        title: "E-Commerce Specifications & Add to Bag Flow",
+        description:
+          "Itemized audio engineering specs, instant currency conversion (N399K), and frictionless cart intent.",
+        category: "Cart & Specs",
+      },
+      {
+        src: "/work/product-showcase/gallery/03-authorized-retailers.webp",
+        title: "Global Authorized Retail Partner Ecosystem",
+        description:
+          "Verified distributor channel integrations: Amazon, Apple, Spotify, and YouTube Music.",
+        category: "Distribution",
       },
     ],
     results: [
@@ -1071,8 +1131,32 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/nirajkumardangi",
     supportsIframe: false,
     images: {
-      desktop: "/work/write-nova/preview.svg",
+      desktop: "/work/write-nova/desktop.webp",
+      mobile: "/work/write-nova/mobile.webp",
     },
+    gallery: [
+      {
+        src: "/work/write-nova/gallery/01-ai-editor-canvas.webp",
+        title: "AI Topic Prompt & Long-Form Document Editor",
+        description:
+          "Gemini-powered text generation canvas with real-time prompt engineering for local business playbooks.",
+        category: "AI Editor",
+      },
+      {
+        src: "/work/write-nova/gallery/02-templates-library.webp",
+        title: "SaaS Template Catalog & Workspace Switcher",
+        description:
+          "Pre-built conversion workflows: Long-form Blog Posts, LinkedIn Viral Hooks, and Product Launch Copy.",
+        category: "Templates",
+      },
+      {
+        src: "/work/write-nova/gallery/03-credit-usage-billing.webp",
+        title: "Real-Time Usage Metering & Credit Dashboard",
+        description:
+          "Stripe-backed token metering, active plan balance (420/500 credits), and account management.",
+        category: "Billing & Credits",
+      },
+    ],
     results: [
       "1,000+ generations processed in sandbox tests",
       "End-to-end checkout & credit deduction verified in sandbox",
