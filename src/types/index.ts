@@ -16,6 +16,45 @@ export type ProjectVertical =
   | "Real Estate"
   | "E-commerce";
 
+export interface ProjectGalleryItem {
+  src: string;
+  title: string;
+  description: string;
+  category?: string;
+}
+
+export interface FeatureCategory {
+  category: string;
+  badge?: string;
+  description?: string;
+  items: string[];
+}
+
+export interface TechStackGrouped {
+  frontend?: string[];
+  backend?: string[];
+  database?: string[];
+  auth?: string[];
+  integrations?: string[];
+  deployment?: string[];
+  tools?: string[];
+}
+
+export interface TechnicalImplementation {
+  architecture: string;
+  workflows: string[];
+  communication?: string;
+  technicalDecisions: string[];
+  performanceSecurity: string[];
+}
+
+export interface ProjectOverview {
+  purpose: string;
+  problem: string;
+  targetAudience: string;
+  highlights: string[];
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -23,18 +62,26 @@ export interface Project {
   vertical: ProjectVertical;
   status: ProjectStatus;
   tagline: string;
+  description?: string;
+  overview?: ProjectOverview;
   problem: string;
   solution: string;
   features: string[];
+  featureCategories?: FeatureCategory[];
   stack: string[];
+  techStack?: TechStackGrouped;
+  implementation?: TechnicalImplementation;
   role: string;
   timeline?: string;
   liveUrl?: string;
   repoUrl?: string;
+  supportsIframe?: boolean;
+  iframeBlockedReason?: string;
   images: {
     desktop: string;
     mobile?: string;
   };
+  gallery?: ProjectGalleryItem[];
   results: string[];
   featured: boolean;
 }

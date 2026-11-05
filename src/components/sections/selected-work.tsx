@@ -95,18 +95,34 @@ export function SelectedWork() {
                     {/* Mockup Frame with consistent 16:10 ratio & zero CLS */}
                     <Link
                       href={`/work/${project.slug}`}
-                      className="block relative w-full rounded-md overflow-hidden border border-[var(--color-border)] bg-bg mb-5 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                      className="block relative w-full rounded-xl overflow-hidden border border-[var(--color-border)] bg-surface mb-5 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent group/frame"
                     >
+                      {/* Browser chrome bar */}
+                      <div className="flex items-center justify-between px-3 py-1.5 bg-[#16161D] border-b border-white/5 select-none text-[10px] font-mono text-zinc-400">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
+                          <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+                          <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
+                        </div>
+                        {project.supportsIframe ? (
+                          <span className="inline-flex items-center gap-1 text-emerald-400 text-[10px] font-sans">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            Live iFrame
+                          </span>
+                        ) : (
+                          <span className="text-zinc-400 text-[10px]">HD Mockup</span>
+                        )}
+                      </div>
+
                       <div
-                        className="relative w-full"
-                        style={{ aspectRatio: "16/10" }}
+                        className="relative w-full aspect-[16/10] bg-[#0A0A0F]"
                       >
                         <Image
                           src={project.images.desktop}
                           alt={`${project.title} screenshot preview`}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                          className="object-cover object-top transition-transform duration-500 ease-out-expo group-hover:scale-[1.01]"
+                          className="object-cover object-top transition-transform duration-500 ease-out-expo group-hover/frame:scale-[1.02]"
                           unoptimized={project.images.desktop.endsWith(".svg")}
                         />
                       </div>

@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
   ExternalLink,
   Code2,
-  CheckCircle2,
   MessageCircle,
   Clock,
   Sparkles,
@@ -20,6 +18,12 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { projects, getProjectBySlug } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 import { whatsappLink } from "@/lib/utils";
+import { DeviceMockupPreview } from "@/components/portfolio/device-mockup-preview";
+import { ProjectOverviewSection } from "@/components/portfolio/project-overview-section";
+import { ProjectGalleryLightbox } from "@/components/portfolio/project-gallery-lightbox";
+import { ProjectFeatureBreakdown } from "@/components/portfolio/project-feature-breakdown";
+import { ProjectTechStack } from "@/components/portfolio/project-tech-stack";
+import { ProjectTechnicalDeepDive } from "@/components/portfolio/project-technical-deep-dive";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -78,14 +82,14 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
     projects[(currentIndex - 1 + projects.length) % projects.length];
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
-  const waEnquiryMessage = `Hi Niraj, I saw your ${project.title} case study and would like to build something similar for my business.`;
+  const waEnquiryMessage = `Hi Niraj, I saw your ${project.name || project.title} showcase and would like to build something similar for my business.`;
 
   return (
     <article className="py-24 md:py-32 lg:py-36 bg-bg">
       <BreadcrumbJsonLd
         items={[
           { name: "Selected Work", url: "/work" },
-          { name: project.title, url: `/work/${project.slug}` },
+          { name: project.name || project.title, url: `/work/${project.slug}` },
         ]}
       />
       <Container>
@@ -101,12 +105,18 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
         </div>
 
         {/* Case Study Header */}
-        <header className="flex flex-col gap-4 max-w-3xl mb-12">
-          <div className="flex items-center gap-3">
+        <header className="flex flex-col gap-4 max-w-3xl mb-10">
+          <div className="flex flex-wrap items-center gap-3">
             <Badge variant={project.status}>{project.status}</Badge>
             <span className="font-mono text-xs uppercase tracking-wider text-muted">
               {project.vertical} · {project.timeline ?? "Custom Build"}
             </span>
+            {project.supportsIframe && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono text-[11px] font-semibold">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Live Interactive Preview</span>
+              </span>
+            )}
           </div>
 
           <h1 className="text-h1 font-bold text-ink tracking-tight text-balance">
@@ -118,126 +128,65 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           </p>
         </header>
 
-        {/* Large Primary Device Frame Visual */}
-        <div className="rounded-lg overflow-hidden border border-[var(--color-border-md)] shadow-xl bg-surface mb-16">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--color-border)] bg-surface">
-            <div className="flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-[#FF5F57]" aria-hidden="true" />
-              <span className="w-3 h-3 rounded-full bg-[#FFBD2E]" aria-hidden="true" />
-              <span className="w-3 h-3 rounded-full bg-[#28C840]" aria-hidden="true" />
-              <div className="ml-2 px-3 py-0.5 rounded bg-bg border border-[var(--color-border)] text-[11px] font-mono text-muted truncate max-w-xs">
-                {project.liveUrl ?? `https://demo.niraj.online/${project.slug}`}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent text-white font-medium text-xs hover:bg-accent/90 transition-colors shadow-xs"
-                >
-                  <span>Open Live Website</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              )}
-              <span className="hidden sm:inline-block font-mono text-[11px] text-muted uppercase">
-                {project.role}
-              </span>
-            </div>
-          </div>
-
-          <div className="relative w-full" style={{ aspectRatio: "16/10" }}>
-            <Image
-              src={project.images.desktop}
-              alt={`${project.title} visual overview`}
-              fill
-              priority
-              sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover object-top select-none"
-              unoptimized={project.images.desktop.endsWith(".svg")}
-            />
-          </div>
-        </div>
+        {/* 1. LIVE WEBSITE PREVIEW (iMac Desktop & iPhone Mobile Frames) */}
+        <DeviceMockupPreview
+          title={project.name || project.title}
+          liveUrl={project.liveUrl}
+          supportsIframe={project.supportsIframe}
+          iframeBlockedReason={project.iframeBlockedReason}
+          desktopImage={project.images.desktop}
+          mobileImage={project.images.mobile}
+          role={project.role}
+        />
 
         {/* 2-Column Editorial Grid: Left content flow + Right sticky summary sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Main Case Study Narrative */}
+          {/* Main Case Study Narrative & Sections */}
           <div className="lg:col-span-8 flex flex-col gap-14">
-            {/* 1. The Problem */}
-            <section aria-labelledby="heading-problem">
+            {/* 01. Detailed Project Overview */}
+            <div>
               <div className="flex items-center gap-2 mb-3">
                 <span className="font-mono text-xs text-accent font-semibold">01</span>
-                <h2
-                  id="heading-problem"
-                  className="font-mono text-xs uppercase tracking-widest text-muted"
-                >
-                  The Friction &amp; Problem
-                </h2>
-              </div>
-              <p className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-4 leading-snug">
-                Why existing methods failed to convert enquiries.
-              </p>
-              <div className="text-base sm:text-lg text-muted text-pretty leading-relaxed space-y-4">
-                <p>{project.problem}</p>
-              </div>
-            </section>
-
-            {/* 2. The Solution & Architecture */}
-            <section aria-labelledby="heading-solution" className="pt-8 border-t border-[var(--color-border)]">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-xs text-accent font-semibold">02</span>
-                <h2
-                  id="heading-solution"
-                  className="font-mono text-xs uppercase tracking-widest text-muted"
-                >
-                  The Solution &amp; Engineering
-                </h2>
-              </div>
-              <p className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-4 leading-snug">
-                Eliminating steps between interest and consultation.
-              </p>
-              <div className="text-base sm:text-lg text-muted text-pretty leading-relaxed space-y-4">
-                <p>{project.solution}</p>
-              </div>
-            </section>
-
-            {/* 3. Key Operational Features */}
-            <section aria-labelledby="heading-features" className="pt-8 border-t border-[var(--color-border)]">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-xs text-accent font-semibold">03</span>
-                <h2
-                  id="heading-features"
-                  className="font-mono text-xs uppercase tracking-widest text-muted"
-                >
-                  Key Architectural Features
+                <h2 className="font-mono text-xs uppercase tracking-widest text-muted">
+                  Project Overview &amp; Objectives
                 </h2>
               </div>
               <p className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-6 leading-snug">
-                Engineered for speed, trust, and simplicity.
+                Purpose, Problem &amp; Core Value Proposition
               </p>
+              <ProjectOverviewSection
+                description={project.description}
+                overview={project.overview}
+                fallbackProblem={project.problem}
+                fallbackSolution={project.solution}
+              />
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.features.map((feat, i) => (
-                  <Card key={i} className="p-5 flex flex-col justify-between">
-                    <div className="flex items-start gap-3">
-                      <span className="w-6 h-6 rounded-md bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-4 h-4 text-accent" />
-                      </span>
-                      <p className="text-sm text-ink font-medium leading-relaxed">
-                        {feat}
-                      </p>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </section>
+            {/* 02. Screenshots & Visual Showcase with Lightbox */}
+            <ProjectGalleryLightbox
+              projectTitle={project.name || project.title}
+              items={project.gallery}
+            />
 
-            {/* 4. Results & Outcomes (Strictly Real) */}
-            <section aria-labelledby="heading-results" className="pt-8 border-t border-[var(--color-border)]">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-mono text-xs text-accent font-semibold">04</span>
+            {/* 03. Complete Feature Breakdown */}
+            <ProjectFeatureBreakdown
+              categories={project.featureCategories}
+              fallbackFeatures={project.features}
+            />
+
+            {/* 04. Technology Stack */}
+            <ProjectTechStack
+              techStack={project.techStack}
+              fallbackStack={project.stack}
+            />
+
+            {/* 05. Technical Implementation (Deep Dive) */}
+            <ProjectTechnicalDeepDive implementation={project.implementation} />
+
+            {/* 06. Measurable Outcomes & Real Results */}
+            <section aria-labelledby="heading-results" className="pt-12 border-t border-[var(--color-border)]">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="font-mono text-xs text-accent font-semibold">06</span>
                 <h2
                   id="heading-results"
                   className="font-mono text-xs uppercase tracking-widest text-muted"
@@ -245,17 +194,20 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                   Measurable Outcomes
                 </h2>
               </div>
-              <p className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-6 leading-snug">
-                Real operational results. No invented metrics.
+              <p className="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-2 leading-snug">
+                Real Operational Results
+              </p>
+              <p className="text-sm text-muted mb-8 max-w-2xl">
+                Verified performance indicators and business impact. No inflated metrics.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {project.results.map((res, i) => (
                   <div
                     key={i}
-                    className="p-4 rounded-lg bg-surface border border-[var(--color-border)] flex flex-col justify-between gap-2 shadow-xs"
+                    className="p-5 rounded-xl bg-surface border border-[var(--color-border)] flex flex-col justify-between gap-3 shadow-xs"
                   >
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-accent font-semibold">
                       Outcome 0{i + 1}
                     </span>
                     <p className="text-sm font-semibold text-ink leading-snug">
@@ -266,19 +218,18 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               </div>
             </section>
 
-            {/* 5. "Want something like this?" Final Conversion Card */}
-            <div className="mt-8 p-8 sm:p-10 rounded-2xl bg-surface border border-[var(--color-border)] shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+            {/* 07. "Want something like this?" Final Conversion Card */}
+            <div className="mt-4 p-8 sm:p-10 rounded-2xl bg-surface border border-[var(--color-border)] shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-6">
               <div className="flex flex-col gap-2 max-w-md">
                 <div className="inline-flex items-center gap-2 font-mono text-xs uppercase text-accent font-semibold">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Start a similar project</span>
                 </div>
                 <h3 className="text-2xl font-bold text-ink tracking-tight">
-                  Want something like this for your business?
+                  Want a high-converting website for your business?
                 </h3>
                 <p className="text-sm text-muted leading-relaxed">
-                  Let&apos;s talk about your business, your customers, and what a
-                  good enquiry looks like. No commitment on the first chat.
+                  Let&apos;s talk about your customers, your goals, and what a good enquiry looks like. No obligation on the initial discovery call.
                 </p>
               </div>
 
@@ -296,7 +247,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
           {/* Right Column: Sticky Summary Sidebar */}
           <aside className="lg:col-span-4 lg:sticky lg:top-28 flex flex-col gap-6">
-            <Card className="p-6 flex flex-col gap-6">
+            <Card className="p-6 flex flex-col gap-6 bg-surface border border-[var(--color-border)]">
               {/* Status & Live Link */}
               <div className="flex items-center justify-between pb-5 border-b border-[var(--color-border)]">
                 <div className="flex flex-col gap-1">
@@ -354,16 +305,35 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 </div>
               )}
 
-              {/* Tech Stack */}
+              {/* Live Iframe Status Badge */}
+              <div className="flex flex-col gap-1 pb-5 border-b border-[var(--color-border)]">
+                <span className="font-mono text-[10px] uppercase text-muted tracking-wider">
+                  Interactive Preview
+                </span>
+                <p className="text-xs text-muted flex items-center gap-1.5">
+                  {project.supportsIframe ? (
+                    <span className="inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Live Iframe Supported
+                    </span>
+                  ) : (
+                    <span className="text-muted">
+                      Ultra-HD Crisp Capture (iMac / iPhone)
+                    </span>
+                  )}
+                </p>
+              </div>
+
+              {/* Tech Stack Chips */}
               <div className="flex flex-col gap-2 pb-5 border-b border-[var(--color-border)]">
                 <span className="font-mono text-[10px] uppercase text-muted tracking-wider">
-                  Technology Stack
+                  Core Technologies
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((t) => (
                     <span
                       key={t}
-                      className="px-2.5 py-1 rounded-md bg-[rgba(10,10,20,0.04)] border border-[var(--color-border)] text-xs font-mono text-ink"
+                      className="px-2.5 py-1 rounded-md bg-bg border border-[var(--color-border)] text-xs font-mono text-ink"
                     >
                       {t}
                     </span>
@@ -379,7 +349,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                 className="w-full justify-center"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Discuss {project.vertical} Site</span>
+                <span>Discuss Similar Project</span>
               </Button>
             </Card>
           </aside>
@@ -393,7 +363,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           {/* Previous Project */}
           <Link
             href={`/work/${prevProject.slug}`}
-            className="group p-5 rounded-lg border border-[var(--color-border)] bg-surface hover:border-[rgba(10,10,20,0.2)] transition-all flex items-center justify-between shadow-xs"
+            className="group p-5 rounded-xl border border-[var(--color-border)] bg-surface hover:border-[var(--color-border-md)] hover:shadow-md transition-all flex items-center justify-between"
           >
             <div className="flex items-center gap-3">
               <ArrowLeft className="w-4 h-4 text-muted group-hover:-translate-x-1 transition-transform" />
@@ -402,7 +372,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                   Previous Project
                 </span>
                 <p className="text-sm font-bold text-ink group-hover:text-accent transition-colors">
-                  {prevProject.title}
+                  {prevProject.name || prevProject.title}
                 </p>
               </div>
             </div>
@@ -412,7 +382,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           {/* Next Project */}
           <Link
             href={`/work/${nextProject.slug}`}
-            className="group p-5 rounded-lg border border-[var(--color-border)] bg-surface hover:border-[rgba(10,10,20,0.2)] transition-all flex items-center justify-between text-right shadow-xs"
+            className="group p-5 rounded-xl border border-[var(--color-border)] bg-surface hover:border-[var(--color-border-md)] hover:shadow-md transition-all flex items-center justify-between text-right"
           >
             <Badge variant={nextProject.status}>{nextProject.status}</Badge>
             <div className="flex items-center gap-3">
@@ -421,7 +391,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
                   Next Project
                 </span>
                 <p className="text-sm font-bold text-ink group-hover:text-accent transition-colors">
-                  {nextProject.title}
+                  {nextProject.name || nextProject.title}
                 </p>
               </div>
               <ArrowRight className="w-4 h-4 text-muted group-hover:translate-x-1 transition-transform" />

@@ -4,7 +4,13 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ArrowUpRight, Code2 } from "lucide-react";
+import {
+  ArrowUpRight,
+  Code2,
+  Monitor,
+  Smartphone,
+  Layers,
+} from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -70,7 +76,7 @@ export function WorkClient() {
             <Card
               key={project.slug}
               spotlight
-              className="h-full flex flex-col justify-between p-5 transition-all duration-300 hover:border-[rgba(10,10,20,0.2)] hover:shadow-md group"
+              className="h-full flex flex-col justify-between p-5 transition-all duration-300 hover:border-[var(--color-border-md)] hover:shadow-lg group"
             >
               <div>
                 {/* Top Bar: Vertical + Status + Live Preview / Arrow */}
@@ -88,11 +94,11 @@ export function WorkClient() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-accent/10 hover:bg-accent/20 text-accent font-medium text-xs transition-colors"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-accent/10 hover:bg-accent/20 text-accent font-medium text-xs transition-colors"
                         aria-label={`Open live preview of ${project.name || project.title}`}
                       >
-                        <span>Live Preview</span>
-                        <ArrowUpRight className="w-3 h-3" />
+                        <span>Live Site</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
                     )}
                     <Link
@@ -105,28 +111,55 @@ export function WorkClient() {
                   </div>
                 </div>
 
-                {/* Device Preview */}
+                {/* Device Frame Preview */}
                 <Link
                   href={`/work/${project.slug}`}
-                  className="block relative w-full rounded-md overflow-hidden border border-[var(--color-border)] bg-[#FAFAF9] mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="block relative w-full rounded-xl overflow-hidden border border-[var(--color-border)] bg-surface mb-4 shadow-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent group/frame"
                 >
+                  {/* Browser chrome header bar */}
+                  <div className="flex items-center justify-between px-3 py-1.5 bg-[#16161D] border-b border-white/5 select-none text-[10px] text-zinc-400 font-mono">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-[#FF5F56]" />
+                      <span className="w-2 h-2 rounded-full bg-[#FFBD2E]" />
+                      <span className="w-2 h-2 rounded-full bg-[#27C93F]" />
+                    </div>
+
+                    <div className="flex items-center gap-2 text-[10px]">
+                      {project.supportsIframe ? (
+                        <span className="inline-flex items-center gap-1 text-emerald-400 font-sans">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          iFrame Live
+                        </span>
+                      ) : (
+                        <span className="text-zinc-400">HD Mockup</span>
+                      )}
+                    </div>
+                  </div>
+
                   <div
-                    className="relative w-full"
-                    style={{ aspectRatio: "16/10" }}
+                    className="relative w-full aspect-[16/10] bg-[#0A0A0F]"
                   >
                     <Image
                       src={project.images.desktop}
                       alt={`${project.title} screenshot`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                      className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.01]"
+                      className="object-cover object-top transition-transform duration-500 ease-out group-hover/frame:scale-[1.02]"
                       unoptimized={project.images.desktop.endsWith(".svg")}
                     />
+
+                    {/* Subtle hover pill */}
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/frame:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-ink text-bg text-xs font-medium shadow-md">
+                        <span>Explore Project Showcase</span>
+                        <ArrowUpRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
 
                 {/* Title & Tagline */}
-                <h2 className="text-lg font-bold text-ink tracking-tight mb-1.5">
+                <h2 className="text-base sm:text-lg font-bold text-ink tracking-tight mb-1.5">
                   <Link
                     href={`/work/${project.slug}`}
                     className="hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
@@ -140,25 +173,51 @@ export function WorkClient() {
                 </p>
               </div>
 
-              {/* Stack & Actions */}
-              <div className="flex items-center justify-between gap-2 pt-3 border-t border-[var(--color-border)]">
-                <div className="flex flex-wrap items-center gap-1.5">
-                  {project.stack.slice(0, 3).map((t) => (
-                    <span
-                      key={t}
-                      className="px-2 py-0.5 rounded bg-[rgba(10,10,20,0.03)] text-[10px] font-mono text-muted/80"
-                    >
-                      {t}
+              {/* Bottom Meta & Action */}
+              <div className="flex flex-col gap-3 pt-3 border-t border-[var(--color-border)]">
+                {/* Device compatibility & gallery badges */}
+                <div className="flex items-center justify-between text-xs text-muted">
+                  <div className="flex items-center gap-2 font-mono text-[11px]">
+                    <span className="inline-flex items-center gap-1 text-ink">
+                      <Monitor className="w-3.5 h-3.5 text-accent" />
+                      iMac
                     </span>
-                  ))}
+                    {project.images.mobile && (
+                      <span className="inline-flex items-center gap-1 text-ink">
+                        <Smartphone className="w-3.5 h-3.5 text-accent" />
+                        iPhone
+                      </span>
+                    )}
+                  </div>
+
+                  {project.gallery && project.gallery.length > 0 && (
+                    <span className="inline-flex items-center gap-1 font-mono text-[10px] text-muted">
+                      <Layers className="w-3 h-3 text-accent" />
+                      {project.gallery.length} verified screens
+                    </span>
+                  )}
                 </div>
 
-                <Link
-                  href={`/work/${project.slug}`}
-                  className="text-xs font-semibold text-accent hover:underline shrink-0"
-                >
-                  Case Study →
-                </Link>
+                {/* Tech chips & Case Study link */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center gap-1">
+                    {project.stack.slice(0, 3).map((t) => (
+                      <span
+                        key={t}
+                        className="px-2 py-0.5 rounded bg-[rgba(10,10,20,0.03)] dark:bg-white/5 border border-[var(--color-border)] text-[10px] font-mono text-muted"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={`/work/${project.slug}`}
+                    className="text-xs font-semibold text-accent hover:underline shrink-0"
+                  >
+                    View Details →
+                  </Link>
+                </div>
               </div>
             </Card>
           ))}
@@ -174,14 +233,13 @@ export function WorkClient() {
               More experiments &amp; technical tools
             </h2>
             <p className="text-sm text-muted max-w-prose">
-              Component libraries, student initiatives, and exploratory
-              prototypes.
+              Component libraries, student initiatives, and exploratory prototypes.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {experimentProjects.map((exp) => (
-              <Card key={exp.slug} className="p-5 flex flex-col justify-between">
+              <Card key={exp.slug} className="p-5 flex flex-col justify-between bg-surface border border-[var(--color-border)]">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <Badge variant={exp.status}>{exp.status}</Badge>
