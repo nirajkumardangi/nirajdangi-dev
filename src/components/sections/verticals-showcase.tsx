@@ -357,7 +357,7 @@ export function VerticalsShowcase() {
               {/* Preview Image with constant aspect ratio to prevent ANY layout shift */}
               <div
                 className="relative overflow-hidden w-full bg-[#0F172A]"
-                style={{ aspectRatio: "16/10" }}
+                style={{ aspectRatio: "16/9" }}
               >
                 <Image
                   key={activeVertical.id}

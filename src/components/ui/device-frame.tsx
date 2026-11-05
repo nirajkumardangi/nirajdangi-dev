@@ -91,7 +91,7 @@ export function DeviceFramePlaceholder({
           <span className="w-3 h-3 rounded-full bg-[#28C840]" aria-hidden="true" />
           <div className="flex-1 ml-2 h-6 rounded bg-[rgba(10,10,20,0.06)] max-w-xs" aria-hidden="true" />
         </div>
-        <div className="bg-[rgba(10,10,20,0.03)] flex items-center justify-center" style={{ aspectRatio: "16/10" }}>
+        <div className="bg-[rgba(10,10,20,0.03)] flex items-center justify-center" style={{ aspectRatio: "16/9" }}>
           <p className="font-mono text-[10px] tracking-widest uppercase text-muted">
             {label ?? "Screenshot pending"}
           </p>

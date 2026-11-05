@@ -205,7 +205,7 @@ export function Hero() {
               {/* Crossfade Slides */}
               <div
                 className="relative overflow-hidden w-full bg-bg"
-                style={{ aspectRatio: "16/10" }}
+                style={{ aspectRatio: "16/9" }}
               >
                 {HERO_PROJECTS.map((project, idx) => {
                   const isCurrent = idx === activeIndex;
