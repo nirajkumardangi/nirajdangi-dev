@@ -6,7 +6,6 @@ import {
   SERVICE_OPTIONS,
   BUDGET_OPTIONS,
 } from "@/lib/schemas/enquiry";
-import { siteConfig } from "@/data/site";
 
 // Simple in-memory rate limiting map
 // Key: IP string, Value: { count: number, resetTime: number }
@@ -103,7 +102,8 @@ export async function POST(request: NextRequest) {
     });
 
     const apiKey = process.env.RESEND_API_KEY;
-    const targetEmail = process.env.CONTACT_EMAIL || siteConfig.owner.email;
+    const targetEmail =
+      process.env.CONTACT_EMAIL || "dangink88@gmail.com";
 
     // 5. Send Email via Resend if API key is provided
     if (apiKey && apiKey.trim().length > 0 && !apiKey.startsWith("re_xxx")) {
@@ -167,18 +167,42 @@ export async function POST(request: NextRequest) {
         </div>
       `;
 
-      await resend.emails.send({
+      const { data: resendData, error: resendError } = await resend.emails.send({
         from: "niraj.online Enquiries <onboarding@resend.dev>",
         to: targetEmail,
         subject: `[New Enquiry] ${data.name} — ${businessLabel}`,
         html: htmlBody,
       });
 
-      // Optional auto-reply to client if they supplied an email
-      if (data.email && data.email.trim().length > 0) {
+      if (resendError) {
+        console.error("[Resend Primary Error]:", resendError);
+        // Resend sandbox only delivers to the account signup email (dangink88@gmail.com)
+        if (targetEmail !== "dangink88@gmail.com") {
+          const fallback = await resend.emails.send({
+            from: "niraj.online Enquiries <onboarding@resend.dev>",
+            to: "dangink88@gmail.com",
+            subject: `[New Enquiry] ${data.name} — ${businessLabel}`,
+            html: htmlBody,
+          });
+          if (fallback.error) {
+            console.error("[Resend Fallback Error]:", fallback.error);
+          } else {
+            console.log("[Resend Delivered to fallback dangink88@gmail.com]:", fallback.data?.id);
+          }
+        }
+      } else {
+        console.log("[Resend Email Sent Successfully]:", resendData?.id);
+      }
+
+      // Optional auto-reply to client (only active if custom verified domain is set)
+      if (
+        data.email &&
+        data.email.trim().length > 0 &&
+        process.env.RESEND_FROM_DOMAIN
+      ) {
         try {
           await resend.emails.send({
-            from: "Niraj Kumar Dangi <onboarding@resend.dev>",
+            from: `Niraj Kumar Dangi <hello@${process.env.RESEND_FROM_DOMAIN}>`,
             to: data.email,
             subject: `Enquiry received — niraj.online`,
             html: `
