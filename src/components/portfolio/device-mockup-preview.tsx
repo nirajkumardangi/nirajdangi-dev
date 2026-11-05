@@ -38,6 +38,63 @@ export function DeviceMockupPreview({
   const [iframeKey, setIframeKey] = React.useState(0);
   const [isLoadingIframe, setIsLoadingIframe] = React.useState(true);
 
+  const desktopViewportRef = React.useRef<HTMLDivElement>(null);
+  const mobileViewportRef = React.useRef<HTMLDivElement>(null);
+  const [desktopScale, setDesktopScale] = React.useState(0.7);
+  const [mobileScale, setMobileScale] = React.useState(0.9);
+
+  React.useEffect(() => {
+    const updateDesktopScale = () => {
+      if (desktopViewportRef.current) {
+        const width = desktopViewportRef.current.clientWidth;
+        if (width > 0) {
+          // Native desktop width: 1440px
+          setDesktopScale(width / 1440);
+        }
+      }
+    };
+
+    const updateMobileScale = () => {
+      if (mobileViewportRef.current) {
+        const width = mobileViewportRef.current.clientWidth;
+        if (width > 0) {
+          // Native mobile flagship width: 390px
+          setMobileScale(width / 390);
+        }
+      }
+    };
+
+    updateDesktopScale();
+    updateMobileScale();
+
+    let desktopObserver: ResizeObserver | null = null;
+    let mobileObserver: ResizeObserver | null = null;
+
+    if (typeof ResizeObserver !== "undefined") {
+      if (desktopViewportRef.current) {
+        desktopObserver = new ResizeObserver(() => updateDesktopScale());
+        desktopObserver.observe(desktopViewportRef.current);
+      }
+      if (mobileViewportRef.current) {
+        mobileObserver = new ResizeObserver(() => updateMobileScale());
+        mobileObserver.observe(mobileViewportRef.current);
+      }
+    }
+
+    const handleWindowResize = () => {
+      updateDesktopScale();
+      updateMobileScale();
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      desktopObserver?.disconnect();
+      mobileObserver?.disconnect();
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, [device, mode]);
+
   const hasMobileImage = Boolean(mobileImage);
 
   const handleRefresh = () => {
@@ -51,7 +108,7 @@ export function DeviceMockupPreview({
     <div className="w-full flex flex-col items-center mb-16">
       {/* Top Device & Mode Control Bar */}
       <div className="w-full max-w-6xl flex flex-wrap items-center justify-between gap-3 p-2.5 mb-6 rounded-2xl bg-surface border border-[var(--color-border)] shadow-xs">
-        {/* Left: Device Switcher (21:9 UltraWide / Bezel-less Mobile) */}
+        {/* Left: Device Switcher (16:9 Desktop Monitor / Bezel-less Mobile) */}
         <div className="flex items-center gap-1.5 p-1 rounded-xl bg-bg border border-[var(--color-border)]">
           <button
             type="button"
@@ -61,10 +118,10 @@ export function DeviceMockupPreview({
                 ? "bg-ink text-bg font-semibold shadow-xs"
                 : "text-muted hover:text-ink"
             }`}
-            aria-label="Switch to 21:9 UltraWide Monitor Preview"
+            aria-label="Switch to 16:9 Desktop Monitor Preview"
           >
             <Monitor className="w-4 h-4" />
-            <span>21:9 UltraWide</span>
+            <span>Desktop (16:9)</span>
           </button>
 
           <button
@@ -170,7 +227,7 @@ export function DeviceMockupPreview({
       <div className="w-full max-w-6xl flex justify-center items-center">
         {device === "desktop" ? (
           /* ============================================================ */
-          /* 🖥️ PREMIUM 21:9 BEZEL-LESS ULTRAWIDE MONITOR                  */
+          /* 🖥️ PREMIUM 16:9 BEZEL-LESS DESKTOP MONITOR                  */
           /* ============================================================ */
           <div className="w-full flex flex-col items-center">
             {/* Monitor Outer Chassis with Bezel-less Micro-Rim */}
@@ -196,7 +253,7 @@ export function DeviceMockupPreview({
                       <span className="truncate">{currentDisplayUrl}</span>
                     </div>
                     <span className="hidden sm:inline-block text-[9px] uppercase tracking-wider text-accent font-semibold px-2 py-0.5 rounded-full bg-accent/10">
-                      21:9 UltraWide
+                      16:9 Widescreen
                     </span>
                   </div>
 
@@ -210,33 +267,48 @@ export function DeviceMockupPreview({
                   </div>
                 </div>
 
-                {/* 21:9 Aspect Ratio Viewport */}
-                <div className="relative w-full aspect-[21/9] bg-[#0A0A0F] overflow-hidden">
+                {/* 16:9 Aspect Ratio Viewport with Scaled Desktop Rendering */}
+                <div
+                  ref={desktopViewportRef}
+                  className="relative w-full aspect-[16/9] bg-[#0A0A0F] overflow-hidden"
+                >
                   {mode === "iframe" && liveUrl && supportsIframe ? (
                     <>
                       {isLoadingIframe && (
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-surface gap-3 z-10">
                           <div className="w-8 h-8 rounded-full border-2 border-accent border-t-transparent animate-spin" />
                           <p className="font-mono text-xs text-muted">
-                            Loading 21:9 live {title} website...
+                            Loading 16:9 desktop live {title} website...
                           </p>
                         </div>
                       )}
-                      <iframe
-                        key={iframeKey}
-                        src={liveUrl}
-                        title={`${title} 21:9 live interactive preview`}
-                        className="w-full h-full border-0 select-auto"
-                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                        loading="lazy"
-                        onLoad={() => setIsLoadingIframe(false)}
-                      />
+                      {/* Scaled Desktop Canvas (1440x810 viewport ensures genuine desktop UI & no mobile hamburger) */}
+                      <div
+                        className="absolute top-0 left-0 pointer-events-auto"
+                        style={{
+                          width: 1440,
+                          height: 810,
+                          transform: `scale(${desktopScale})`,
+                          transformOrigin: "top left",
+                        }}
+                      >
+                        <iframe
+                          key={iframeKey}
+                          src={liveUrl}
+                          title={`${title} 16:9 desktop live interactive preview`}
+                          style={{ width: 1440, height: 810 }}
+                          className="w-[1440px] h-[810px] border-0 select-auto"
+                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                          loading="lazy"
+                          onLoad={() => setIsLoadingIframe(false)}
+                        />
+                      </div>
                     </>
                   ) : (
                     <div className="relative w-full h-full">
                       <Image
                         src={desktopImage}
-                        alt={`${title} 21:9 UltraWide preview`}
+                        alt={`${title} 16:9 Desktop preview`}
                         fill
                         priority
                         sizes="(max-width: 1400px) 100vw, 1400px"
@@ -315,7 +387,10 @@ export function DeviceMockupPreview({
                 </div>
 
                 {/* Mobile Viewport (19.5:9 Ultra-Tall Aspect Ratio) */}
-                <div className="relative w-full aspect-[9/19.5] bg-[#0A0A0F] overflow-hidden">
+                <div
+                  ref={mobileViewportRef}
+                  className="relative w-full aspect-[9/19.5] bg-[#0A0A0F] overflow-hidden"
+                >
                   {mode === "iframe" && liveUrl && supportsIframe ? (
                     <>
                       {isLoadingIframe && (
@@ -326,15 +401,27 @@ export function DeviceMockupPreview({
                           </p>
                         </div>
                       )}
-                      <iframe
-                        key={`m-${iframeKey}`}
-                        src={liveUrl}
-                        title={`${title} bezel-less mobile preview`}
-                        className="w-full h-full border-0 select-auto"
-                        sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                        loading="lazy"
-                        onLoad={() => setIsLoadingIframe(false)}
-                      />
+                      {/* Scaled Mobile Canvas (390x845 native resolution) */}
+                      <div
+                        className="absolute top-0 left-0 pointer-events-auto"
+                        style={{
+                          width: 390,
+                          height: 845,
+                          transform: `scale(${mobileScale})`,
+                          transformOrigin: "top left",
+                        }}
+                      >
+                        <iframe
+                          key={`m-${iframeKey}`}
+                          src={liveUrl}
+                          title={`${title} bezel-less mobile preview`}
+                          style={{ width: 390, height: 845 }}
+                          className="w-[390px] h-[845px] border-0 select-auto"
+                          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                          loading="lazy"
+                          onLoad={() => setIsLoadingIframe(false)}
+                        />
+                      </div>
                     </>
                   ) : hasMobileImage && mobileImage ? (
                     <Image
