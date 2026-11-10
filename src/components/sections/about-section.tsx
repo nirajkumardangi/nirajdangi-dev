@@ -3,6 +3,8 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Card } from "@/components/ui/card";
 import { aboutData } from "@/data/about";
+import { siteConfig } from "@/data/site";
+import { LinkedInIcon, InstagramIcon } from "@/components/ui/social-icons";
 import {
   GraduationCap,
   Clock,
@@ -85,6 +87,59 @@ export function AboutSection() {
               <p className="text-xs text-ink/90 leading-relaxed font-medium">
                 {aboutData.responsePromise}
               </p>
+            </div>
+
+            {/* Direct Social & Professional Profiles */}
+            <div className="p-4 rounded-xl border border-[var(--color-border)] bg-surface shadow-xs flex flex-col gap-3">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-muted font-semibold">
+                  Direct Social Profiles
+                </span>
+                <span className="font-mono text-[10px] text-accent font-medium">
+                  Verified Channels
+                </span>
+              </div>
+              <div className="grid grid-cols-2 gap-2.5">
+                <a
+                  href={siteConfig.owner.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5 p-2.5 rounded-lg border border-[var(--color-border)] hover:border-[#0A66C2]/50 bg-bg/60 hover:bg-[#0A66C2]/5 transition-all text-ink min-h-[44px]"
+                  aria-label="Connect with Niraj Kumar Dangi on LinkedIn"
+                >
+                  <span className="w-8 h-8 rounded-md bg-[#0A66C2]/10 text-[#0A66C2] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <LinkedInIcon className="w-4 h-4 fill-current" />
+                  </span>
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-xs font-bold leading-tight truncate group-hover:text-[#0A66C2] transition-colors">
+                      LinkedIn
+                    </span>
+                    <span className="text-[10px] font-mono text-muted truncate">
+                      @nirajkumardangi
+                    </span>
+                  </div>
+                </a>
+
+                <a
+                  href={siteConfig.owner.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-2.5 p-2.5 rounded-lg border border-[var(--color-border)] hover:border-[#E4405F]/50 bg-bg/60 hover:bg-[#E4405F]/5 transition-all text-ink min-h-[44px]"
+                  aria-label="Follow Niraj Kumar Dangi on Instagram"
+                >
+                  <span className="w-8 h-8 rounded-md bg-[#E4405F]/10 text-[#E4405F] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <InstagramIcon className="w-4 h-4" />
+                  </span>
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-xs font-bold leading-tight truncate group-hover:text-[#E4405F] transition-colors">
+                      Instagram
+                    </span>
+                    <span className="text-[10px] font-mono text-muted truncate">
+                      @nirajdangi.dev
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
 

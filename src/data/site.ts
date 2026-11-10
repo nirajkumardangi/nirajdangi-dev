@@ -13,6 +13,7 @@ export const siteConfig: SiteConfig = {
     email: "nirajkrdangi@gmail.com",
     github: "https://github.com/nirajkumardangi",
     linkedin: "https://linkedin.com/in/nirajkumardangi",
+    instagram: "https://instagram.com/nirajdangi.dev",
   },
   ogImage: "/images/og-image.png",
 };

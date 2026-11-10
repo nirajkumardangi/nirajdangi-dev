@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { siteConfig } from "@/data/site";
 import { whatsappLink, DEFAULT_WA_MESSAGE } from "@/lib/utils";
+import { LinkedInIcon, InstagramIcon, GitHubIcon } from "@/components/ui/social-icons";
 
 export function Footer() {
   const currentYear = 2026;
@@ -37,23 +38,43 @@ export function Footer() {
               <span>IST (UTC+5:30) · Response within 2 hours</span>
             </div>
 
-            <div className="pt-2 flex items-center gap-3">
-              <a
-                href={siteConfig.owner.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono text-muted hover:text-ink transition-colors inline-flex items-center gap-1 min-h-[44px]"
-              >
-                GitHub <ArrowUpRight className="w-3 h-3 text-muted" />
-              </a>
-              <span className="text-muted/40">·</span>
+            <div className="pt-2 flex flex-wrap items-center gap-2">
               <a
                 href={siteConfig.owner.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-mono text-muted hover:text-ink transition-colors inline-flex items-center gap-1 min-h-[44px]"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--color-border)] hover:border-[#0A66C2]/40 bg-bg hover:bg-[#0A66C2]/5 text-xs font-mono text-muted hover:text-ink transition-all min-h-[36px]"
+                aria-label="LinkedIn: nirajkumardangi"
               >
-                LinkedIn <ArrowUpRight className="w-3 h-3 text-muted" />
+                <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2] fill-current" />
+                <span className="font-sans font-medium text-ink">LinkedIn</span>
+                <span className="text-[10px] text-muted hidden sm:inline">@nirajkumardangi</span>
+                <ArrowUpRight className="w-3 h-3 text-muted group-hover:text-ink transition-colors" />
+              </a>
+
+              <a
+                href={siteConfig.owner.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--color-border)] hover:border-[#E4405F]/40 bg-bg hover:bg-[#E4405F]/5 text-xs font-mono text-muted hover:text-ink transition-all min-h-[36px]"
+                aria-label="Instagram: nirajdangi.dev"
+              >
+                <InstagramIcon className="w-3.5 h-3.5 text-[#E4405F]" />
+                <span className="font-sans font-medium text-ink">Instagram</span>
+                <span className="text-[10px] text-muted hidden sm:inline">@nirajdangi.dev</span>
+                <ArrowUpRight className="w-3 h-3 text-muted group-hover:text-ink transition-colors" />
+              </a>
+
+              <a
+                href={siteConfig.owner.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--color-border)] hover:border-ink/20 bg-bg hover:bg-surface text-xs font-mono text-muted hover:text-ink transition-all min-h-[36px]"
+                aria-label="GitHub profile"
+              >
+                <GitHubIcon className="w-3.5 h-3.5 text-muted group-hover:text-ink" />
+                <span className="font-sans font-medium text-ink">GitHub</span>
+                <ArrowUpRight className="w-3 h-3 text-muted group-hover:text-ink transition-colors" />
               </a>
             </div>
           </div>

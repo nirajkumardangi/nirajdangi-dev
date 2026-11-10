@@ -8,7 +8,11 @@ export function GlobalJsonLd() {
     name: siteConfig.owner.name,
     jobTitle: "Freelance Software Engineer & Web Developer",
     url: siteConfig.url,
-    sameAs: [siteConfig.owner.github, siteConfig.owner.linkedin],
+    sameAs: [
+      siteConfig.owner.github,
+      siteConfig.owner.linkedin,
+      siteConfig.owner.instagram,
+    ].filter(Boolean),
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ranchi",

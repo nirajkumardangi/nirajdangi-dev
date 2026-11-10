@@ -187,6 +187,7 @@ export interface SiteConfig {
     email: string;
     github: string;
     linkedin: string;
+    instagram?: string;
   };
   ogImage: string;
 }
