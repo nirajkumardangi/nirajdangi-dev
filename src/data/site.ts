@@ -5,7 +5,7 @@ export const siteConfig: SiteConfig = {
   tagline: "We Build Websites That Help Your Business Grow.",
   description:
     "Custom-designed and built for businesses in Ranchi and beyond. Fast on mobile. Clear to your customers. Yours to keep.",
-  url: "https://niraj.online",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://dev.niraj.online",
   owner: {
     name: "Niraj Kumar Dangi",
     location: "Ranchi, Jharkhand",
